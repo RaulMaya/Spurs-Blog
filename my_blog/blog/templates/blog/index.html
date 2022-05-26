@@ -1,20 +1,19 @@
 {% extends "base.html" %}
+{% load static %}
  
 {% block title %}
     Football Blog
 {% endblock %}
 
-{% block content %}
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "blog/post.css" %}">
+    <link rel="stylesheet" href="{% static "blog/styles.css" %}">
+{% endblock %}
 
-    <header id="navigation">
-        <h1><a href="">Football Blog</a></h1>
-        <nav>
-            <a href="">Posts</a>
-        </nav>
-    </header>
+{% block content %}
     <section id="start">
         <header>
-            <img src="" alt="Iconic Moments"/>
+            <img src="{% static "iniesta_2010.jpg" %}" alt="Iconic Moments"/>
             <h2>FOOTBALL IS LIFE</h2>
         </header>
         <p>This is a football blog</p>
@@ -23,17 +22,7 @@
     <section id="latest-posts">
         <h2>New Posts!</h2>
         <ul>
-            <li>
-                <article class = 'post'>
-                    <a href="">
-                        <img src="" alt="Real Madrid Options To Mbappe News"/>
-                        <div class="content">
-                            <h3>Real Madrid Options To Mbappe News</h3>
-                            <p>Nkunku, Salah, Botman, Mane, Gnabry</p>
-                        </div>
-                        
-                </article
-            </li>
+            {% include "blog/includes/portrait.html" %}
         </ul>
     </section>
 
