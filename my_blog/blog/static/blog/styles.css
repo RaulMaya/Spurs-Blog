@@ -33,12 +33,6 @@
     font-size: 1.5rem;
   }
 
-  #latest-posts img {
-    width: 30rem;
-    height: 20rem;
-    border: 5px solid white;
-  }
-  
   #latest-posts {
     background-color: white;
     padding: 2rem;
