@@ -22,7 +22,9 @@
     <section id="latest-posts">
         <h2>New Posts!</h2>
         <ul>
-            {% include "blog/includes/portrait.html" %}
+            {% for post in posts %}
+                {% include "blog/includes/portrait.html" %}
+            {% endfor %}
         </ul>
     </section>
 
