@@ -3,7 +3,7 @@
 
 
 {% block title %}
-
+{{ post.title|title }}
 {% endblock title %}
 
 {% block css_files %}
@@ -12,21 +12,16 @@
 
 {% block content %}
     <section id='summary'>
-        <h2>Real Madrids Options</h2>
+        <h2>{{ post.title|title }}</h2>
         <article>
-            <img src="{% static "real_madrid_options.jpg" %}" alt="Post Title"/>
-            <address>By Raul Maya Salazar</address>
+            <img src="{% static post.image %}" alt="Post Title"/>
+            <address>By {{ post.author|title }}</address>
             <div>
-                Last Update<time>28-05-2022</time>
+                Last Update: <time>{{ post.date|date:"d M Y" }}</time>
             </div>
         </article>
     </section>
     <main>
-        <p>Even though in my opinion Real Madrid doesn't need to reinforce the attack, and I feel that Mbappe situation was all about
-            bringing in a powerful and important name, Florentino must be looking for great names to bring in to Real Madrid.
-        </p>
-        <p>Even though in my opinion Real Madrid doesn't need to reinforce the attack, and I feel that Mbappe situation was all about
-            bringing in a powerful and important name, Florentino must be looking for great names to bring in to Real Madrid.
-        </p>
+        {{ post.content|linebreaks }}
     </main>
 {% endblock %}
