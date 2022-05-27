@@ -17,9 +17,9 @@
     <h2>Posts</h2>
 
     <ul>
-        {% include "blog/includes/portrait.html" %}
-        {% include "blog/includes/portrait.html" %}
-        {% include "blog/includes/portrait.html" %}
+        {% for post in all_posts %}
+            {% include "blog/includes/portrait.html" %}
+        {% endfor %}
     </ul>
 </section>
 {% endblock %}

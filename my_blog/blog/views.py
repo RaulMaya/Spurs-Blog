@@ -1,3 +1,4 @@
+from turtle import write_docstringdict
 from django.shortcuts import render
 from datetime import date
 
@@ -92,6 +93,24 @@ written_posts = [
         
         Even though in my opinion Real Madrid doesn't need to reinforce the attack, and I feel that Mbappe situation was all about
         bringing in a powerful and important name, Florentino must be looking for great names to bring in to Real Madrid.""",
+    },
+        {
+        "slug":"jose_mourinho_conference",
+        "image":"mou_conference.jpg",
+        "author":"Raul Maya",
+        "date":date(2022,5,26),
+        "title":"'The Special One' did it again!",
+        "excerpt":"AS Roma crown as the first UEFA Conference League Champions",
+        "content": """
+
+        Even though in my opinion Real Madrid doesn't need to reinforce the attack, and I feel that Mbappe situation was all about
+        bringing in a powerful and important name, Florentino must be looking for great names to bring in to Real Madrid.
+        
+        Even though in my opinion Real Madrid doesn't need to reinforce the attack, and I feel that Mbappe situation was all about
+        bringing in a powerful and important name, Florentino must be looking for great names to bring in to Real Madrid.
+        
+        Even though in my opinion Real Madrid doesn't need to reinforce the attack, and I feel that Mbappe situation was all about
+        bringing in a powerful and important name, Florentino must be looking for great names to bring in to Real Madrid.""",
     }
 ]
 def get_date(post):
@@ -103,7 +122,13 @@ def starting_page(request):
     return render(request, "blog/index.html", {"posts":latest_posts})
 
 def posts(request):
-    return render(request, "blog/posts.html")
+    sorted_posts = sorted(written_posts, key=get_date)
+    return render(request, "blog/posts.html", {
+        "all_posts":sorted_posts
+    })
 
 def individual_post(request, slug):
-    return render(request, "blog/individual_post.html")
+    selected_post = next(post for post in written_posts if post['slug'] == slug)
+    return render(request, "blog/individual_post.html", {
+        "post": selected_post
+    })
