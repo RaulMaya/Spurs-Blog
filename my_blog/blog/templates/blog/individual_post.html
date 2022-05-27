@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+
+{% endblock title %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "blog/post.css" %}">
+    <link rel="stylesheet" href="{% static "blog/styles.css" %}">
+{% endblock %}
+
+{% block content %}
+    <section id='summary'>
+        <h2>Real Madrids Options</h2>
+        <article>
+            <img src="{% static "real_madrid_options.jpg" %}" alt="Post Title"/>
+            <address>By Raul Maya Salazar</address>
+            <div>
+                Last Update<time>28-05-2022</time>
+            </div>
+        </article>
+    </section>
+    <main>
+        <p>Even though in my opinion Real Madrid doesn't need to reinforce the attack, and I feel that Mbappe situation was all about
+            bringing in a powerful and important name, Florentino must be looking for great names to bring in to Real Madrid.
+        </p>
+        <p>Even though in my opinion Real Madrid doesn't need to reinforce the attack, and I feel that Mbappe situation was all about
+            bringing in a powerful and important name, Florentino must be looking for great names to bring in to Real Madrid.
+        </p>
+    </main>
+{% endblock %}
