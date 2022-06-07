@@ -120,6 +120,8 @@ def get_date(post):
     return post['date']
 
 def starting_page(request):
+    posts = Post.objects.all().order_by("date")
+    print(posts[0].title, posts[0].author, posts[0].date)
     sorted_posts = sorted(written_posts, key=get_date)
     latest_posts = sorted_posts[-3:]
     return render(request, "blog/index.html", {"posts":latest_posts})
