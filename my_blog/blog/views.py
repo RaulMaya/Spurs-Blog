@@ -1,6 +1,9 @@
 from turtle import write_docstringdict
 from django.shortcuts import render
 from datetime import date
+from django.db.models import Avg, Max, Min
+from .models  import Post, Tag, Author
+from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
 written_posts = [
