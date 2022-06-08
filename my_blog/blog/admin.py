@@ -6,8 +6,8 @@ from .models import Post, Author, Tag
 class PostAdmin(admin.ModelAdmin):
     # readonly_fields =  ("slug", )
     prepopulated_fields = {"slug":("title",)}
-    list_filter = ("author", "date")
-    list_display = ("title", "author")
+    list_filter = ("author","tag" ,"date")
+    list_display = ("title", "date", "author")
 
 
 admin.site.register(Post, PostAdmin)
