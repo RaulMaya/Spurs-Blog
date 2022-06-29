@@ -1,37 +1,56 @@
-from turtle import write_docstringdict
-from xml.dom.minidom import Identified
+from webbrowser import get
 from django.shortcuts import render
 from datetime import date
 from django.db.models import Avg, Max, Min
 from .models  import Post
 from django.shortcuts import render, get_object_or_404
-
+from django.views.generic.base import TemplateView
+from django.views.generic import DetailView
 # Create your views here.
+
+class IndexView(TemplateView):
+    template_name = "blog/index.html"
+    def get_context_data(self, **kwargs):
+        context =  super().get_context_data(**kwargs)
+        context['latest_posts'] = Post.objects.all().order_by("-date")[:3]
+        return context
 
 def get_date(post):
     return post['date']
 
-def starting_page(request):
-    latest_posts = Post.objects.all().order_by("-date")[:3]
-
+#def starting_page(request):
+#    latest_posts = Post.objects.all().order_by("-date")[:3]
+#
     # sorted_posts = sorted(written_posts, key=get_date)
     # latest_posts = list_of_dicts[-3:]
 
-    return render(request, "blog/index.html", {"posts":latest_posts})
+#    return render(request, "blog/index.html", {"posts":latest_posts})
 
-def posts(request):
-    list_of_dicts = []
-    posts = Post.objects.all().order_by("-date")
+class PostsView(TemplateView):
+    template_name = "blog/posts.html"
+    def get_context_data(self, **kwargs):
+        context =  super().get_context_data(**kwargs)
+        context['all_posts'] = Post.objects.all().order_by("-date")
+        return context
+
+#def posts(request):
+#    list_of_dicts = []
+#    posts = Post.objects.all().order_by("-date")
 
     # sorted_posts = sorted(written_posts, key=get_date)
-    return render(request, "blog/posts.html", {
-        "all_posts":posts
-    })
+#    return render(request, "blog/posts.html", {
+#        "all_posts":posts
+#    })
 
-def individual_post(request, slug):
-    selected_post = get_object_or_404(Post, slug=slug)
-    # posts = Post.objects.all().order_by("date")
-    # selected_post = next(post for post in posts if post.slug == slug)
-    return render(request, "blog/individual_post.html", {
-        "post": selected_post, "tags":selected_post.tag.all()
-    })
+class DetailPostView(DetailView):
+    template_name = "blog/individual_post.html"
+    model  = Post
+
+
+#def individual_post(request, slug):
+#    selected_post = get_object_or_404(Post, slug=slug)
+#    # posts = Post.objects.all().order_by("date")
+#    # selected_post = next(post for post in posts if post.slug == slug)
+#    return render(request, "blog/individual_post.html", {
+#        "post": selected_post, "tags":selected_post.tag.all()
+#    })
