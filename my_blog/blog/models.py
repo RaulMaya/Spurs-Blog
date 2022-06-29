@@ -1,3 +1,4 @@
+from email.mime import image
 from tkinter.tix import Tree
 from django.db import models
 from django.urls import reverse
@@ -27,7 +28,7 @@ class Post(models.Model):
     title = models.CharField(max_length=100)
     excerpt = models.CharField(max_length=200)
     author =  models.ForeignKey(Author, on_delete=models.SET_NULL, null=True, related_name="post")
-    image_name = models.CharField(max_length=150)
+    image = models.ImageField(upload_to="images", null=True)
     date = models.DateField(auto_now=True) # Automatically set whenever there is an update
     slug = models.SlugField(unique=True, default="", db_index=True) # Unique True implies an index
     content = models.TextField(validators=[MinLengthValidator(10)])
