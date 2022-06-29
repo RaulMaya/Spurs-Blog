@@ -139,3 +139,38 @@ main {
   border-radius: 6px;
   border: 1px solid #ccc;
 }
+
+.errorlist{
+  list-style: none;
+  margin: 0.5 rem 0;
+  padding: 0;
+  color: #c00606
+}
+
+.invalid label{
+  color: #c00606
+}
+
+.invalid input,
+.invalid textarea{
+  border-color: #c00606;
+  background-color: #ffdbdb;
+}
+
+#alert{
+  margin: 8rem auto 3rem auto;
+  border: 1px solid red;
+  background-color: #ffdbdb;
+  padding: 0.5rem;
+  width: 90%
+
+}
+
+#alert a{
+  text-decoration: none;
+  border: 1px solid red;
+  background-color: #ffdbdb;
+  color: black;
+  padding: 0.2rem 1.5rem;
+  border-radius: 6px;
+}
