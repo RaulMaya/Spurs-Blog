@@ -54,8 +54,9 @@ class DetailPostView(View):
         post = Post.objects.get(slug=slug)
         context = {
             "post":post,
-            "post_tags":post.tag.all(),
-            "comment_form": CommentForm()
+            "tags":post.tag.all(),
+            "comment_form": CommentForm(),
+            "comments":post.comments.all
         }
         return render(request, "blog/individual_post.html", context)
     
@@ -72,8 +73,9 @@ class DetailPostView(View):
         post = Post.objects.get(slug=slug)
         context = {
             "post":post,
-            "post_tags":post.tags.all(),
-            "comment_form": CommentForm()
+            "tags":post.tag.all(),
+            "comment_form": comment_form,
+            "comments":post.comments.all
         }
         return render(request, "blog/individual_post.html", context)
 
