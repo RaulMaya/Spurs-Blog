@@ -31,7 +31,9 @@
     </main>
     <section id="comment-form" >
         <h2>Comments</h2>
+        <form action="{% url 'individual_post' post.slug %}" method="POST">
         <form >
+            {% csrf_token %}
             {% for field in comment_form %}
             <div class = "control-form">
             {{ field.label_tag }}
