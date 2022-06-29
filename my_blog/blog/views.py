@@ -5,15 +5,19 @@ from django.db.models import Avg, Max, Min
 from .models  import Post
 from django.shortcuts import render, get_object_or_404
 from django.views.generic.base import TemplateView
-from django.views.generic import DetailView
+from django.views.generic import DetailView, ListView
 # Create your views here.
 
-class IndexView(TemplateView):
+class IndexView(ListView):
     template_name = "blog/index.html"
-    def get_context_data(self, **kwargs):
-        context =  super().get_context_data(**kwargs)
-        context['latest_posts'] = Post.objects.all().order_by("-date")[:3]
-        return context
+    model  = Post
+    ordering = ['-date','title']
+    context_object_name = 'posts'
+
+    def get_queryset(self):
+        query_set =  super().get_queryset()
+        data = query_set[:3]
+        return data
 
 def get_date(post):
     return post['date']
@@ -26,12 +30,11 @@ def get_date(post):
 
 #    return render(request, "blog/index.html", {"posts":latest_posts})
 
-class PostsView(TemplateView):
+class PostsView(ListView):
     template_name = "blog/posts.html"
-    def get_context_data(self, **kwargs):
-        context =  super().get_context_data(**kwargs)
-        context['all_posts'] = Post.objects.all().order_by("-date")
-        return context
+    model  = Post
+    ordering = ['-date','title']
+    context_object_name = 'all_posts'
 
 #def posts(request):
 #    list_of_dicts = []
@@ -46,6 +49,10 @@ class DetailPostView(DetailView):
     template_name = "blog/individual_post.html"
     model  = Post
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["tags"] = self.object.tag.all()
+        return context
 
 #def individual_post(request, slug):
 #    selected_post = get_object_or_404(Post, slug=slug)
