@@ -6,6 +6,7 @@ from .models  import Post
 from django.shortcuts import render, get_object_or_404
 from django.views.generic.base import TemplateView
 from django.views.generic import DetailView, ListView
+from .forms import CommentForm
 # Create your views here.
 
 class IndexView(ListView):
@@ -52,6 +53,7 @@ class DetailPostView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["tags"] = self.object.tag.all()
+        context["comment_form"] =  CommentForm()
         return context
 
 #def individual_post(request, slug):
