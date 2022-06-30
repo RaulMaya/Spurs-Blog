@@ -57,11 +57,11 @@ body {
   font-weight: bold;
 }
 
-#read-later {
+.read-later {
   margin: 2rem 0;
 }
 
-#read-later button {
+.read-later button {
   background-color: transparent;
   border: 1px solid white;
   padding: 0.5rem 2rem;
@@ -70,8 +70,8 @@ body {
   cursor: pointer;
 }
 
-#read-later button:hover,
-#read-later button:active {
+.read-later button:hover,
+.read-later button:active {
   background-color: white;
   color: #390281;
 }
@@ -202,3 +202,18 @@ main {
 
 #comments h2 {
   color: #464646;}
+
+.on-read-list button {
+  background-color: white;
+  border: 1px solid white;
+  padding: 0.5rem 2rem;
+  font: inherit;
+  color: rgb(78, 1, 110);
+  cursor: pointer;
+}
+
+.on-read-list button:hover,
+.on-read-list button:active {
+  background-color: transparent;
+  color: #ffffff;
+}

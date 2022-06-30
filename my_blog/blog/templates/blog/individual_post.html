@@ -29,11 +29,15 @@
             <span class ="tag">{{ tag.caption }}</span>
             {% endfor %}
         </div>
-        <div id="read-later">
+        <div class="read-later {% if saved_for_later %}on-read-list{% endif %}">
             <form action="{% url 'read-later' %}" method="POST">
                 {% csrf_token %}
                 <input type="hidden" value="{{ post.id }}" name="post_id">
-                <button class="btn"><i class="fa fa-book"></i></button>
+                {% if saved_for_later %}
+                <button class="btn"><i class="fa fa-bookmark-o"></i></button>
+                {% else %}
+                <button class="btn"><i class="fa fa-bookmark"></i></button>
+                {% endif %}
             </form>
             
         </div>
