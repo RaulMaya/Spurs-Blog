@@ -56,7 +56,7 @@ class DetailPostView(View):
             "post":post,
             "tags":post.tag.all(),
             "comment_form": CommentForm(),
-            "comments":post.comments.all
+            "comments":post.comments.all().order_by("-id")
         }
         return render(request, "blog/individual_post.html", context)
     
@@ -75,7 +75,7 @@ class DetailPostView(View):
             "post":post,
             "tags":post.tag.all(),
             "comment_form": comment_form,
-            "comments":post.comments.all
+            "comments":post.comments.all().order_by("-id")
         }
         return render(request, "blog/individual_post.html", context)
 

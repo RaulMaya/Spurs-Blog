@@ -8,6 +8,7 @@
 
 {% block css_files %}
     <link rel="stylesheet" href="{% static "blog/main.css" %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 {% endblock %}
 
 {% block content %}
@@ -28,6 +29,11 @@
             <span class ="tag">{{ tag.caption }}</span>
             {% endfor %}
         </div>
+        <div id="read-later">
+            <button class="btn"><i class="fa fa-book"></i></button>
+            <button class="btn"><i class="fa fa-star"></i></button>
+        </div>
+        
         <article>
             <img src="{{ post.image.url }}" alt="Post Title"/>
             <address>By <a href="mailto:{{ post.author.email_address }}">{{ post.author|title }}</a></address>
