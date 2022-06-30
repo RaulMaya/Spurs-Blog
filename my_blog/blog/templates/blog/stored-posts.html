@@ -10,19 +10,16 @@
 {% endblock %}
 
 {% block content %}
-     <section id="stored-posts">
+    <section id="posts">
+        <h2>Posts</h2>
         {% if not has_posts %}
         <p> No Post Saved</p>
         {% endif %}
         <ul>
-            <li>
             {% for post in posts %}
-
                 {% include "blog/includes/portrait.html" %}
-        
             {% endfor %}
-        </li>
-        </ul>
+         </ul>
      </section>
 
 {% endblock %}
