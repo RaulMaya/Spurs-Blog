@@ -10,25 +10,50 @@
     <title>{% block page_title %}{% endblock %}</title>
     <link rel="stylesheet" href="{% static "global_styles.css" %}">
     <link rel="icon" href="{% static "Spurs Blog Logo.png" %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     {% bootstrap_css %}
     {% bootstrap_javascript jquery='full' %}
-    {% block css_files %}{% endblock %}
+    {% block css_files %}
+    {% endblock %}
 </head>
 <body>
-    <header id="main-navigation">
-        <h1><a href="{% url 'blog:starting_page' %}">Football Blog</a></h1>
-        <nav>
-            <h4><a href="{% url 'blog:posts' %}">Posts</a></h4>
-            <h4><a href="{% url 'blog:read-later' %}">Stored Posts</a></h4>
+    <nav class="sidebar-navigation">
+        <ul>
+            <li>
+                <a class='active' href="{% url 'blog:starting_page' %}"><img src="{% static "Spurs Blog Logo.png" %}" alt="" width="38" he8ight="38"></a>
+                <span class="tooltip">Home</span>
+            </li>
+            <li>
+                <a href="{% url 'blog:posts' %}"><i class="fa fa-newspaper-o"></i></a>
+                <span class="tooltip">Posts</span>
+            </li>
             {% if user.is_authenticated %}
-            <h4>Hi, {{ user.username }}</h4>
-            <a href="{% url 'users:logout' %}">Log out</a>
+            <li>
+                <a href="{% url 'users:logout' %}"><i class="fa fa-sign-out"></i></a>
+                <span class="tooltip">Log Out</span>
+            </li>
+            <li>
+                <a href="{% url 'blog:read-later' %}"><a href=""><i class="fa fa-user-circle"></i></a>
+                <span class="tooltip">Profile</span>
+            </li>
             {% else %}
-            <h4><a href="{% url 'users:login' %}">Log In</a></h4>
-            <h4><a href="{% url 'users:register' %}">Register</a></h4>
+            <li>
+                <a href="{% url 'users:login' %}"><i class="fa fa-sign-in"></i></a>
+                <span class="tooltip">Log In</span>
+            </li>
+            <li>
+                <a href="{% url 'users:register' %}"><i class="fa fa-address-card"></i></a>
+                <span class="tooltip">Register</span>
+            </li>
             {% endif %}
-        </nav>
-    </header>
+        </ul>
+    </nav>
     {% block content %}{% endblock %}
 </body>
+<script>
+    $("ul li").on("click", function () {
+        $("li").removeClass("active");
+        $(this).addClass("active");
+    });
+</script>
 </html>
