@@ -9,17 +9,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block page_title %}{% endblock %}</title>
     <link rel="stylesheet" href="{% static "global_styles.css" %}">
-    <link rel="icon" href="{% static "rusiawc.png" %}">
+    <link rel="icon" href="{% static "Spurs Blog Logo.png" %}">
     {% bootstrap_css %}
     {% bootstrap_javascript jquery='full' %}
     {% block css_files %}{% endblock %}
 </head>
 <body>
     <header id="main-navigation">
-        <h1><a href="{% url 'starting_page' %}">Football Blog</a></h1>
+        <h1><a href="{% url 'blog:starting_page' %}">Football Blog</a></h1>
         <nav>
-            <h2><a href="{% url 'posts' %}">Posts</a></h2>
-            <h2><a href="{% url 'read-later' %}">Stored Posts</a></h2>
+            <h4><a href="{% url 'blog:posts' %}">Posts</a></h2>
+            <h4><a href="{% url 'blog:read-later' %}">Stored Posts</a></h2>
+            {% if user.is_authenticated %}
+            <h4>Hi, {{ user.username }}</h2>
+            <h4><a href="{% url 'users:logout' %}">Log out</a></h4>
+            {% else %}
+            <h4><a href="{% url 'users:register' %}">Register</a></h4>
+            {% endif %}
         </nav>
     </header>
     {% block content %}{% endblock %}

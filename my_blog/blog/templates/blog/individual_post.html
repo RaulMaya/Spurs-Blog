@@ -30,7 +30,7 @@
             {% endfor %}
         </div>
         <div class="read-later {% if saved_for_later %}on-read-list{% endif %}">
-            <form action="{% url 'read-later' %}" method="POST">
+            <form action="{% url 'blog:read-later' %}" method="POST">
                 {% csrf_token %}
                 <input type="hidden" value="{{ post.id }}" name="post_id">
                 {% if saved_for_later %}
@@ -71,7 +71,7 @@
 
     <section id="comment-form" >
         <h2>Comments</h2>
-        <form action="{% url 'individual_post' post.slug %}" method="POST">
+        <form action="{% url 'blog:individual_post' post.slug %}" method="POST">
         <form >
             {% csrf_token %}
             {% for field in comment_form %}
