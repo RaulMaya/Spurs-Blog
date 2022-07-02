@@ -39,6 +39,15 @@
                 <button class="btn"><i class="fa fa-bookmark"></i></button>
                 {% endif %}
             </form>
+            <form action="{% url 'blog:favorites' %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" value="{{ post.id }}" name="post_id">
+                {% if saved_for_later %}
+                <button class="btn"><i class="fa fa-star"></i></button>
+                {% else %}
+                <button class="btn"><i class="fa fa-star"></i></button>
+                {% endif %}
+            </form>
             
         </div>
         
