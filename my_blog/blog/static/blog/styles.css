@@ -1,75 +1,89 @@
+@import url("https://fonts.googleapis.com/css?family=Red+Hat+Display:900&display=swap");
 #start {
-    background: linear-gradient(to right top, #000000, #3D0000, #950101, #FF0000);
-    padding: 6rem 12%;
-  }
-  
-  #start header {
-    display: flex;
-    align-items: flex-start;
-    margin: 3rem auto;
-  }
-  
-  #start img {
-    width: 30rem;
-    height: 20rem;
-    object-fit: cover;
-    object-position: top;
-    border: 5px solid white;
-    border-radius: 12px;
-    background-color: #ffe1bf;
-    transform: rotateZ(-5deg);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-  }
-  
-  #start h2 {
-    font-size: 3.5rem;
-    margin: 0 0 0 2rem;
-    color: #e4e4e4;
-    width: 10rem;
-  }
-  
-  #start p {
-    color: white;
-    font-size: 1.5rem;
-  }
+    background-image: url('https://www.stadia-magazine.com/wp-content/uploads/2019/05/Opening-Ceremony-cropped.jpg') op;
+    padding: 0.01rem 12%;
+    font-family: "Red Hat Display", sans-serif;
+}
 
-  #latest-posts {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 12px;
-    width: 60rem;
-    margin: -6rem auto 2rem auto;
-    box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.4);
-  }
-  
-  #latest-posts h2 {
-    text-align: center;
-  }
-  
-  #latest-posts ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 1rem;
-  }
-  
-  #latest-posts li {
-    flex: 1;
-  }
-  
-  #about {
-    text-align: center;
-    padding: 3rem;
-    background-color: #c00606;
-    margin-top: 5rem;
-  }
-  
-  #about h2 {
-    font-size: 3rem;
-  }
-  
-  #about p {
-    font-size: 1.5rem;
-    color: #353535;
-  }
+
+#start header {
+  display: flex;
+  align-items: flex-start;
+  margin: 1rem auto;
+  width: fit-content;
+  height: 30rem;
+}
+
+#start img {
+  width: 32rem;
+  height: 22rem;
+  object-fit: cover;
+  object-position: top;
+  border: 5px solid white;
+  border-radius: 12px;
+  background-color: #ffe1bf;
+  transform: rotateZ(0deg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+#start h1 {
+  font-size: 6vw;
+  max-width: 75vw;
+  color: #fefefe;
+}
+#start h1 span {
+  background-image: linear-gradient(transparent calc(65% - 5px), #000656 5px);
+  background-size: 0;
+  background-repeat: no-repeat;
+  display: inline;
+  transition: 0.5s ease;
+}
+#start h1:hover span {
+  background-size: 100%;
+}
+
+#start p {
+  color: white;
+  font-size: 1.5rem;
+}
+
+#latest-posts {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 60rem;
+  margin: -6rem auto 2rem auto;
+  box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.4);
+}
+
+#latest-posts h2 {
+  text-align: center;
+}
+
+#latest-posts ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+#latest-posts li {
+  flex: 1;
+}
+
+#about {
+  text-align: center;
+  padding: 3rem;
+  background-color: #c00606;
+  margin-top: 5rem;
+}
+
+#about h2 {
+  font-size: 3rem;
+}
+
+#about p {
+  font-size: 1.5rem;
+  color: #353535;
+}
