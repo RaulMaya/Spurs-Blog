@@ -2,21 +2,20 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  font-family: "Lato", sans-serif;
   line-height: 1;
 }
 
 body {
   background-color: #f5f6f8;
-  overflow: hidden;
 }
 
 .sidebar-navigation {
   display: inline-block;
-  min-height: 100vh;
+  min-height:fit-content;
   width: 80px;
   background-color: #001E6C;
   float: left;
+  border: #f5f6f8 2px solid;
 }
 
 .sidebar-navigation ul {
