@@ -15,7 +15,7 @@ text-align: center;
 #latest-posts h4 {
     padding: 10px;
     text-align: center;
-    font-size: 25px;
+    font-size: 20px;
     color: #000000;
     }
 
@@ -45,6 +45,7 @@ flex: 1;
   border-radius: 10px;
   box-shadow: 0 2px 20px rgba(23, 11, 104, 0.958);
   overflow: hidden;
+  justify-content: center;
   width: 300px;
   height: 500px;
 }
@@ -61,7 +62,6 @@ flex: 1;
   align-items: flex-start;
   padding-left: 15px;
   padding-bottom: 40px;
-  min-height: 250px;
 }
 
 #latest-posts .tag {
@@ -77,6 +77,7 @@ flex: 1;
 
 .user {
   display: flex;
+  justify-content: last baseline;
   margin-top: auto;
 }
 
