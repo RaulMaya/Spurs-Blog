@@ -24,14 +24,14 @@ body {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  padding: 1rem 2rem;
+  padding: 1rem 1rem;
   border-radius: 12px;
   text-align: right;
   color: white;
 }
 
 #summary article img {
-  width: 17rem;
+  width: 22rem;
   height: 15rem;
   border-radius: 12px;
   transform: rotateZ(0deg);
@@ -53,13 +53,13 @@ body {
 }
 
 .read-later {
-  margin: 2rem 0;
+  margin: 1rem 0;
 }
 
 .read-later button {
   background-color: transparent;
   border: 1px solid white;
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 1.5rem;
   font: inherit;
   color: white;
   cursor: pointer;
@@ -67,6 +67,26 @@ body {
 
 .read-later button:hover,
 .read-later button:active {
+  background-color: white;
+  color: #390281;
+}
+
+.favorite {
+  margin: 1rem 0;
+  display: table-cell;
+}
+
+.favorite button {
+  background-color: transparent;
+  border: 1px solid white;
+  padding: 0.5rem 1.5rem;
+  font: inherit;
+  color: white;
+  cursor: pointer;
+}
+
+.favorite button:hover,
+.favorite button:active {
   background-color: white;
   color: #390281;
 }
@@ -211,4 +231,27 @@ main {
 .on-read-list button:active {
   background-color: transparent;
   color: #ffffff;
+}
+
+
+.on-fav-list button {
+  background-color: white;
+  border: 1px solid white;
+  padding: 0.5rem 2rem;
+  font: inherit;
+  color: rgb(78, 1, 110);
+  cursor: pointer;
+}
+
+.on-fav-list button:hover,
+.on-fav-list button:active {
+  background-color: transparent;
+  color: #ffffff;
+}
+
+.Row {
+  display: table;
+  width: 100%; /*Optional*/
+  table-layout: fixed; /*Optional*/
+  border-spacing: 10px; /*Optional*/
 }

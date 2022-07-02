@@ -2,7 +2,7 @@
 #start {
     background-image: url('https://www.stadia-magazine.com/wp-content/uploads/2019/05/Opening-Ceremony-cropped.jpg');
     padding: 0.01rem 12%;
-    
+    background-size: cover;
 }
 
 

@@ -40,14 +40,13 @@ flex: 1;
 }
 
 #latest-posts .card {
-  margin: 10px;
+  margin: 15px;
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
   box-shadow: 0 2px 20px rgba(23, 11, 104, 0.958);
   overflow: hidden;
-  justify-content: center;
   width: 300px;
-  height: 500px;
+  height: 450px;
 }
 
 #latest-posts .card-header img {
@@ -58,27 +57,16 @@ flex: 1;
 #latest-posts .card-body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: flex-start;
   padding-left: 15px;
-  padding-bottom: 40px;
-}
-
-#latest-posts .tag {
-  background: #004ac1;
-  border-radius: 50px;
-  font-size: 12px;
-  margin: 0;
-  color: #fff;
-  padding: 2px 10px;
-  text-transform: uppercase;
-  cursor: pointer;
+  padding-top: 10px;
 }
 
 .user {
   display: flex;
-  justify-content: last baseline;
-  margin-top: auto;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
 }
 
 .user img {

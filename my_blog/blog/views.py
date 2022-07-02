@@ -60,6 +60,15 @@ class DetailPostView(View):
 
         return is_saved
 
+    def favorites(self, request, post_id):
+        fav_post = request.session.get("favorites")
+        if fav_post is not None:
+            is_fav = post_id in fav_post
+        else:
+            is_fav = False
+
+        return is_fav
+
     def get(self, request, slug):
         post = Post.objects.get(slug=slug)
 
@@ -68,7 +77,8 @@ class DetailPostView(View):
             "tags":post.tag.all(),
             "comment_form": CommentForm(),
             "comments":post.comments.all().order_by("-id"),
-            "saved_for_later": self.is_stored_post(request, post.id)
+            "saved_for_later": self.is_stored_post(request, post.id),
+            "favorite_one": self.favorites(request, post.id)
         }
         return render(request, "blog/individual_post.html", context)
     
@@ -143,14 +153,14 @@ class ReadLaterView(View):
 
 class FavoritesView(View):
     def get(self, request):
-        stored_posts = request.session.get("stored_posts")
+        fav_posts = request.session.get("favorites")
         context = {}
 
-        if stored_posts is None or len(stored_posts) == 0:
+        if fav_posts is None or len(fav_posts) == 0:
             context["posts"] = []
             context["has_posts"] = False
         else:
-            posts = Post.objects.filter(id__in=stored_posts)
+            posts = Post.objects.filter(id__in=fav_posts)
             context["posts"] = posts
             context["has_posts"] = True
         
@@ -158,19 +168,19 @@ class FavoritesView(View):
 
 
     def post(self, request):
-        stored_posts = request.session.get("stored_posts")
+        fav_posts = request.session.get("favorites")
 
-        if stored_posts is None:
-            stored_posts = []
+        if fav_posts is None:
+            fav_posts = []
 
         post_id = int(request.POST["post_id"])
         
-        if post_id in stored_posts:
-            stored_posts.remove(post_id)
-            request.session["stored_posts"] = stored_posts
+        if post_id in fav_posts:
+            fav_posts.remove(post_id)
+            request.session["favorites"] = fav_posts
         else:
-            stored_posts.append(post_id)
-            request.session["stored_posts"] = stored_posts
+            fav_posts.append(post_id)
+            request.session["favorites"] = fav_posts
         
 
 
