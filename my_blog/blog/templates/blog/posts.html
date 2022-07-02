@@ -7,19 +7,23 @@
 
 
 {% block css_files %}
-    <link rel="stylesheet" href="{% static "blog/post.css" %}">
     <link rel="stylesheet" href="{% static "blog/posts.css" %}">
 {% endblock %}
 
 
 {% block content %}
 <section id="posts">
+    <header>
     <h2>Posts</h2>
-
+    </header>
+    <section id="all-posts">
     <ul>
+        <div class="container">
         {% for post in all_posts %}
             {% include "blog/includes/portrait.html" %}
         {% endfor %}
+        </div>
     </ul>
+    </section>  
 </section>
 {% endblock %}
