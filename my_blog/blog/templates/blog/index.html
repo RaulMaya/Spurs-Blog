@@ -6,32 +6,25 @@
 {% endblock %}
 
 {% block css_files %}
-    <link rel="stylesheet" href="{% static "blog/post.css" %}">
-    <link rel="stylesheet" href="{% static "blog/styles.css" %}">
+<link rel="stylesheet" href="{% static "blog/index_posts.css" %}">
+<link rel="stylesheet" href="{% static "blog/styles.css" %}">
 {% endblock %}
 
 {% block content %}
     <section id="start">
         <header>
-            <h1><span>Tottenham Blog</span></h1>
-            <img src="{% static "spurs.jpg" %}" alt="Iconic Moments"/>
+            <a class='active' href="{% url 'blog:starting_page' %}"><h1><span>Tottenham Blog</span></h1></a>
         </header>
-    </section>
-
-    <section id="latest-posts">
-        <h2>New Posts!</h2>
-        <ul>
-            {% for post in posts %}
-                {% include "blog/includes/portrait.html" %}
-            {% endfor %}
-        </ul>
-    </section>
-
-    <section id='about'>
-        <h2>By Raul Maya Salazar</h2>
-            <p>This is a Django learning project to improve my skills using this tools, by creating
-                a blog about football, which is my favorite sport.
-            </p>
+        <section id="latest-posts">
+            <h2>New Posts!</h2>
+            <ul>
+                <div class="container">
+                {% for post in posts %}
+                    {% include "blog/includes/portrait.html" %}
+                {% endfor %}
+                </div>
+            </ul>
+        </section>
     </section>
 
 {% endblock %}

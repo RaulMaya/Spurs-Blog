@@ -1,12 +1,20 @@
 {% load static %}
 <li>
-    <article class = 'post'>
-        <a href="{% url 'blog:individual_post' post.slug %}">
+    <div class="card">
+        <div class="card-header">
             <img src="{{ post.image.url }}"  alt="{{ post.title }}"/>
-            <div class="post__content">
-                <h3>{{ post.title }}</h3>
-                <p>{{ post.excerpt }}</p>
+        </div>
+        <div class="card-body">
+          <span class="tag tag-pink">Spurs</span>
+          <a href="{% url 'blog:individual_post' post.slug %}"><h4>
+            {{ post.title }}
+          </h4></a>
+          <div class="user">
+            <img src="{{ post.image.url }}"  alt="{{ post.title }}"/>
+            <div class="user-info">
+              <h5>Raul Maya</h5>
+              <small>{{ post.date }}</small>
             </div>
-        </a>
-    </article>
+          </div>
+    </div>
 </li>
