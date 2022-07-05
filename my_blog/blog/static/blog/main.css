@@ -3,20 +3,31 @@ body {
 }
 
 #summary {
-  margin: 1rem 1rem 3rem auto;
-  padding: 1rem 10rem 4rem 1rem;
+  margin: 0rem 1rem 1rem auto;
+  padding: 1rem 5rem 1rem 1rem;
   width: 90%;
   max-width: 90rem;
-  border-radius: 16px;
+  border-radius: 12px;
   background-color: #000262;
   position: relative;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-  height: 24rem;
+  height: fit-content;
+}
+
+.text-container{
+  background-color: transparent;
+  width: 50rem;
+}
+
+.side-forms{
+  display: inline-block;
+  width: 1000px;
+  background-color: #c00606;
 }
 
 #summary h2 {
   color: white;
-  font-size: 4.4rem;
+  font-size: 4rem;
   margin-bottom: 1rem;
 }
 
@@ -31,13 +42,15 @@ body {
 }
 
 #summary article img {
-  width: 22rem;
-  height: 15rem;
+  width: 23rem;
+  height: 16rem;
   border-radius: 12px;
   transform: rotateZ(0deg);
   border: 5px solid white;
   margin-bottom: 1rem;
 }
+
+
 
 #summary address {
   font-weight: bold;
@@ -73,7 +86,6 @@ body {
 
 .favorite {
   margin: 1rem 0;
-  display: table-cell;
 }
 
 .favorite button {
@@ -90,6 +102,39 @@ body {
   background-color: white;
   color: #390281;
 }
+
+.on-read-list button {
+  background-color: transparent;
+  border: 1px solid white;
+  padding: 0.5rem 1.5rem;
+  font: inherit;
+  color: white;
+  cursor: pointer;
+}
+
+.on-read-list button:hover,
+.on-read-list button:active {
+  background-color: transparent;
+  color: #ffffff;
+}
+
+
+.on-fav-list button {
+  background-color: transparent;
+  border: 1px solid white;
+  padding: 0.5rem 1.5rem;
+  font: inherit;
+  color: white;
+  cursor: pointer;
+}
+
+.on-fav-list button:hover,
+.on-fav-list button:active {
+  background-color: transparent;
+  color: #ffffff;
+}
+
+
 
 main {
   width: 90%;
@@ -121,9 +166,9 @@ main {
 
 #comment-form button {
   font: inherit;
-  background-color: #390281;
+  background-color: #0b0281;
   color: white;
-  border: 1px solid #390281;
+  border: 1px solid #020f81;
   padding: 0.5rem 1.5rem;
   border-radius: 6px;
   cursor: pointer;
@@ -131,8 +176,8 @@ main {
 
 #comment-form button:hover,
 #comment-form button:active {
-  background-color: #4f0ba7;
-  border-color: #4f0ba7;
+  background-color: #0b10a7;
+  border-color: #0b13a7;
 }
 
 .control-form {
@@ -218,40 +263,3 @@ main {
 #comments h2 {
   color: #464646;}
 
-.on-read-list button {
-  background-color: white;
-  border: 1px solid white;
-  padding: 0.5rem 2rem;
-  font: inherit;
-  color: rgb(78, 1, 110);
-  cursor: pointer;
-}
-
-.on-read-list button:hover,
-.on-read-list button:active {
-  background-color: transparent;
-  color: #ffffff;
-}
-
-
-.on-fav-list button {
-  background-color: white;
-  border: 1px solid white;
-  padding: 0.5rem 2rem;
-  font: inherit;
-  color: rgb(78, 1, 110);
-  cursor: pointer;
-}
-
-.on-fav-list button:hover,
-.on-fav-list button:active {
-  background-color: transparent;
-  color: #ffffff;
-}
-
-.Row {
-  display: table;
-  width: 100%; /*Optional*/
-  table-layout: fixed; /*Optional*/
-  border-spacing: 10px; /*Optional*/
-}

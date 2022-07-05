@@ -23,14 +23,16 @@
 {% endif %}
 
     <section id='summary'>
+    <div class="text-container">
     <h2>{{ post.title|title }}</h2>
+    </div>
     <div>
         {% for tag in tags %}
         <span class ="tag">{{ tag.caption }}</span>
         {% endfor %}
     </div>
     {% if user.is_authenticated %}
-    <div class="Row">
+    <div class = "side-forms">
         <div class="read-later {% if saved_for_later %}on-read-list{% endif %}">
             <form action="{% url 'blog:read-later' %}" method="POST">
                 {% csrf_token %}

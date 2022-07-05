@@ -23,6 +23,7 @@
         {{ field.errors }}
     </div>
     {% endfor %}
+    <p>Already have an account?</p><a href="">Log In</a>
     <button name="submit">Register</button>
     <input type="hidden" name="next" value="{% url 'blog:starting_page' %}"/>
 </form>
