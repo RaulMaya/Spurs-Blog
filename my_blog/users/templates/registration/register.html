@@ -7,15 +7,24 @@
 
 
 {% block css_files %}
-
+<link rel="stylesheet" href="{% static "registration/register.css" %}">
 {% endblock %}
 
 
 {% block content %}
+<div class="container">
+
 <form method='POST' action="{% url 'users:register' %}">
     {% csrf_token %}
-    {{ form.as_p }}
+    {% for field in form %}
+    <div class = "register-form {% if field.errors %}invalid{% endif %}">
+        {{ field.label_tag }}
+        {{ field }}
+        {{ field.errors }}
+    </div>
+    {% endfor %}
     <button name="submit">Register</button>
     <input type="hidden" name="next" value="{% url 'blog:starting_page' %}"/>
 </form>
+</div>
 {% endblock %}"
