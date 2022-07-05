@@ -5,6 +5,13 @@
     Log Out
 {% endblock %}
 
+{% block css_files %}
+<link rel="stylesheet" href="{% static "registration/logout.css" %}">
+{% endblock %}
+
 {% block content %}
-    <h5>You have been logged out. Thanks for your visit.</h5>
+<div class='container'>
+    <h5>You have been logged out.
+        <br>Thanks for your visit.</h5>
+</div>
 {% endblock content %}
