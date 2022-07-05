@@ -10,16 +10,22 @@
 {% endblock %}
 
 {% block content %}
-    <section id="posts">
-        <h2>Posts</h2>
-        {% if not has_posts %}
-        <p> No Post Saved</p>
-        {% endif %}
-        <ul>
-            {% for post in posts %}
-                {% include "blog/includes/portrait.html" %}
-            {% endfor %}
-         </ul>
-     </section>
+
+<section id="posts">
+    <header>
+        <h2>Read Later Posts</h2>
+    </header>
+    {% if not has_posts %}
+    <p> No Post Saved</p>
+    {% else %}
+    <section id="all-posts">
+    <ul>
+        {% for post in posts %}
+            {% include "blog/includes/portrait.html" %}
+        {% endfor %}
+     </ul>
+    </section>
+    {% endif %}
+ </section>
 
 {% endblock %}
