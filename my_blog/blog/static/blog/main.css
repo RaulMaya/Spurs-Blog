@@ -9,7 +9,6 @@ body {
   max-width: 90rem;
   border-radius: 12px;
   background-color: #000262;
-  position: relative;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   height: fit-content;
 }
@@ -21,8 +20,8 @@ body {
 
 .side-forms{
   display: inline-block;
-  width: 1000px;
-  background-color: #c00606;
+  width: 250px;
+  background-color: transparent
 }
 
 #summary h2 {
@@ -48,9 +47,7 @@ body {
   transform: rotateZ(0deg);
   border: 5px solid white;
   margin-bottom: 1rem;
-}
-
-
+} 
 
 #summary address {
   font-weight: bold;
@@ -67,12 +64,14 @@ body {
 
 .read-later {
   margin: 1rem 0;
+  float: left;
+  margin-right: 12px;
 }
 
 .read-later button {
   background-color: transparent;
   border: 1px solid white;
-  padding: 0.5rem 1.5rem;
+  padding: 0.5rem 2rem;
   font: inherit;
   color: white;
   cursor: pointer;
@@ -81,7 +80,8 @@ body {
 .read-later button:hover,
 .read-later button:active {
   background-color: white;
-  color: #390281;
+  color: #FF5B00;
+  border: 1px solid #FF5B00;
 }
 
 .favorite {
@@ -91,7 +91,7 @@ body {
 .favorite button {
   background-color: transparent;
   border: 1px solid white;
-  padding: 0.5rem 1.5rem;
+  padding: 0.5rem 2rem;
   font: inherit;
   color: white;
   cursor: pointer;
@@ -100,38 +100,41 @@ body {
 .favorite button:hover,
 .favorite button:active {
   background-color: white;
-  color: #390281;
+  color: #FAC213;
+  border: 1px solid #FAC213;
 }
 
 .on-read-list button {
-  background-color: transparent;
-  border: 1px solid white;
-  padding: 0.5rem 1.5rem;
+  padding: 0.5rem 2rem;
   font: inherit;
-  color: white;
   cursor: pointer;
+  background-color: white;
+  color: #FF5B00;
+  border: 1px solid #FF5B00;
 }
 
 .on-read-list button:hover,
 .on-read-list button:active {
   background-color: transparent;
   color: #ffffff;
+  border: 1px solid #ffffff;
 }
 
 
 .on-fav-list button {
-  background-color: transparent;
-  border: 1px solid white;
-  padding: 0.5rem 1.5rem;
+  padding: 0.5rem 2rem;
   font: inherit;
-  color: white;
   cursor: pointer;
+  background-color: white;
+  color: #FAC213;
+  border: 1px solid #FAC213;
 }
 
 .on-fav-list button:hover,
 .on-fav-list button:active {
   background-color: transparent;
   color: #ffffff;
+  border: 1px solid #ffffff;
 }
 
 
@@ -148,9 +151,9 @@ main {
 
 .tag {
   background-color: white;
-  color: #390281;
+  color: #002385;
   padding: 0.5rem 1rem;
-  border-radius: 8px;
+  border-radius: 8px #002385 solid;
 }
 
 
@@ -263,3 +266,32 @@ main {
 #comments h2 {
   color: #464646;}
 
+.login-posts button{
+  margin: 10px;
+  padding: 15px 30px;
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  display: block;
+  border: 0px;
+  font-weight: 700;
+  box-shadow: 0px 0px 14px -7px #3AA3C1;
+  background-image: linear-gradient(45deg, #260980 0%, #283996  51%, #3AA3C1  100%);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.login-posts button:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.login-posts button:active {
+  transform: scale(0.95);
+}
