@@ -8,6 +8,7 @@ from django.http import HttpResponseRedirect
 from django.views.generic import ListView
 from django.views import View
 from .forms import CommentForm
+from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 
 class IndexView(ListView):
@@ -116,7 +117,8 @@ class DetailPostView(View):
 #    })
 
 
-class ReadLaterView(View):
+class ReadLaterView(LoginRequiredMixin, View):
+
     def get(self, request):
         stored_posts = request.session.get("stored_posts")
         context = {}
@@ -130,7 +132,6 @@ class ReadLaterView(View):
             context["has_posts"] = True
         
         return render(request, "blog/stored-posts.html", context)
-
 
     def post(self, request):
         stored_posts = request.session.get("stored_posts")
@@ -151,7 +152,8 @@ class ReadLaterView(View):
 
         return HttpResponseRedirect("/")
 
-class FavoritesView(View):
+
+class FavoritesView(LoginRequiredMixin, View):
     def get(self, request):
         fav_posts = request.session.get("favorites")
         context = {}
@@ -165,8 +167,7 @@ class FavoritesView(View):
             context["has_posts"] = True
         
         return render(request, "blog/favorites.html", context)
-
-
+    
     def post(self, request):
         fav_posts = request.session.get("favorites")
 
