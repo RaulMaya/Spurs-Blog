@@ -14,6 +14,7 @@
 {% block content %}
 
 <div class="container">
+    <img src="{% static "LoginLogo.png" %}"  alt="{{ post.title }}"/>
 
 {% if form.errors %}
     <p>Error</p>
@@ -28,8 +29,10 @@
         {{ field.errors }}
     </div>
     {% endfor %}
-    <p>Don't have an account?</p><a href="">Create One</a>
     <button name="submit">Log In</button>
+    <div class="create-account">
+    <p>Don't have an account?</p><a href="{% url 'users:register' %}">Create One</a>
+    </div>
     <input type="hidden" name="next" value="{% url 'blog:starting_page' %}"/>
 </form>
 </div>

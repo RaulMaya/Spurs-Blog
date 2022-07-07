@@ -13,6 +13,7 @@
 
 {% block content %}
 <div class="container">
+    <img src="{% static "LoginLogo.png" %}"  alt="{{ post.title }}"/>
 
 <form method='POST' action="{% url 'users:register' %}">
     {% csrf_token %}
@@ -23,8 +24,10 @@
         {{ field.errors }}
     </div>
     {% endfor %}
-    <p>Already have an account?</p><a href="{% url 'users:login' %}">Log In</a>
     <button name="submit">Register</button>
+    <div class="create-account">
+        <p>Already have an account?</p><a href="{% url 'users:login' %}">Log In</a>
+    </div>
     <input type="hidden" name="next" value="{% url 'blog:starting_page' %}"/>
 </form>
 </div>
