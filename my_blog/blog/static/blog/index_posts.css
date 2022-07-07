@@ -1,10 +1,8 @@
 #latest-posts {
-    background-color: white;
-    padding: 1rem;
+    background-color: transparent;
     border-radius: 12px;
     width: fit-content;
     margin: -28rem auto 2rem auto;
-    box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.4);
     height: fit-content;
   }
   
@@ -12,12 +10,16 @@
 text-align: center;
 }
 
-#latest-posts h4 {
-    padding: 10px;
-    text-align: center;
-    font-size: 20px;
-    color: #000000;
-    }
+#latest-posts .card-body h4 {
+  margin: 10px auto;
+  text-align: center;
+  text-decoration:none;
+  text-align: center;
+  font-size: 20px;
+  color: #000000;
+}
+
+
 
 #latest-posts ul {
 list-style: none;
@@ -25,10 +27,12 @@ margin: 0;
 padding: 0;
 display: flex;
 gap: 1rem;
+text-decoration:none;
 }
 
 #latest-posts li {
 flex: 1;
+text-decoration:none;
 }
 
 
@@ -37,26 +41,29 @@ flex: 1;
   justify-content: space-evenly;
   grid-template-columns: auto auto auto;
   padding: 10px;
+  text-decoration:none;
 }
 
 #latest-posts .card {
   margin: 15px;
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
-  box-shadow: 0 1px 15px rgba(23, 11, 104, 0.958);
+  box-shadow: 0 1px 15px rgba(22, 33, 122, 0.958);
   overflow: hidden;
   width: 300px;
   height: 450px;
+  text-decoration:none;
 }
 
 #latest-posts .card:hover {
   margin: 15px;
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
-  box-shadow: 0 2px 20px rgba(16, 97, 218, 0.958);
+  box-shadow: 0 7px 20px rgba(182, 245, 255, 0.958);
   overflow: hidden;
   width: 300px;
   height: 450px;
+  text-decoration: none;
 }
 
 
@@ -71,6 +78,7 @@ flex: 1;
   align-items: flex-start;
   padding-left: 15px;
   padding-top: 10px;
+  text-decoration:none;
 }
 
 .user {

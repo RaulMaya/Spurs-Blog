@@ -25,13 +25,18 @@
     <section id='summary'>
     <div class="text-container">
     <h2>{{ post.title|title }}</h2>
+    <hr>
     </div>
     <div>
         {% for tag in tags %}
         <button class ="tag">{{ tag.caption }}</button>
         {% endfor %}
     </div>
+    <div class = 'article'>
+        <img src="{{ post.image.url }}" alt="Post Title"/>
+    </div>
     {% if user.is_authenticated %}
+    
     <div class = "side-forms">
         <div class="read-later {% if saved_for_later %}on-read-list{% endif %}">
             <form action="{% url 'blog:read-later' %}" method="POST">
@@ -55,28 +60,30 @@
             {% endif %}
         </form>
         </div>
-    </div>
+    
     {% else %}
     <div class="login-posts">
         <button><a href="{% url 'users:login' %}">Log In <i class="fa fa-sign-in"></i></a></button>
     </div>
     {% endif %}
         
-        <article>
-            <img src="{{ post.image.url }}" alt="Post Title"/>
+
+        <div class="author">            
             <address>By <a href="mailto:{{ post.author.email_address }}">{{ post.author|title }}</a></address>
             <div>
                 Last Update: <time>{{ post.date|date:"d M Y" }}</time>
             </div>
-        </article>
+        </div>
+    </div>
     </section>
-
+    <hr>
 
     <main>
         {{ post.content|linebreaks }}
     </main>
 
     {% if comments %}
+    <hr>
         <section id="comments" >
             <ul>
                 {% for comment in comments %}
@@ -91,8 +98,8 @@
     {% else %}
         <p>No comments in this post</p>
     {% endif %}
-
-    {% if user.is_authenticated %}
+    
+    <hr>
     <section id="comment-form" >
         <h2>Comments</h2>
         <form action="{% url 'blog:individual_post' post.slug %}" method="POST">
@@ -108,7 +115,4 @@
             <button>Save Comment</button>
         </form>
     </section>
-    {% else %}
-    <p>Want to Comment</p>
-    {% endif %}
 {% endblock %}

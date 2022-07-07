@@ -1,19 +1,22 @@
 {% load static %}
 <li>
+  
     <div class="card">
+      <a href="{% url 'blog:individual_post' post.slug %}">
         <div class="card-header">
             <img src="{{ post.image.url }}"  alt="{{ post.title }}"/>
         </div>
         <div class="card-body">
-          <a href="{% url 'blog:individual_post' post.slug %}"><h4>
+          <h4>
             {{ post.title }}
-          </h4></a>
+          </h4>
           <div class="user">
-            <img src="{{ post.image.url }}"  alt="{{ post.title }}"/>
+            <img src="{% static "raulmaya.jpg" %}"  alt="{{ post.title }}"/>
             <div class="user-info">
               <h5>Raul Maya</h5>
               <small>{{ post.date }}</small>
             </div>
           </div>
+        </a>
     </div>
 </li>
