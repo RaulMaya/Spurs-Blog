@@ -13,15 +13,14 @@ body {
 }
 
 .text-container{
-  background-color:transparent;
-  width: 40em;
+  width: fit-content;
   height: fit-content;
 }
 
 .side-forms{
   display: inline-block;
   width: 100%;
-  padding-top: 4.5em;
+  padding-top: 1rem;
 }
 
 
@@ -113,16 +112,16 @@ body {
   padding: 0.5rem 2rem;
   font: inherit;
   cursor: pointer;
-  background-color: white;
-  color: #FF5B00;
-  border: 1px solid #FF5B00;
+  background-color: #FF5B00;
+  color: #ffffff;
+  border: 1px solid #ffffff;
 }
 
 .on-read-list button:hover,
 .on-read-list button:active {
-  background-color: transparent;
-  color: #ffffff;
-  border: 1px solid #ffffff;
+  background-color: #ffffff;
+  color: #FF5B00;
+  border: 1px solid #FF5B00;
 }
 
 
@@ -130,17 +129,45 @@ body {
   padding: 0.5rem 2rem;
   font: inherit;
   cursor: pointer;
-  background-color: white;
-  color: #FAC213;
+  background-color: #FAC213;
+  color: #ffffff;
   border: 1px solid #FAC213;
 }
 
 .on-fav-list button:hover,
 .on-fav-list button:active {
-  background-color: transparent;
+  background-color: #ffffff;
+  color: #FAC213;
+  border: 1px solid #FAC213;
+}
+
+
+.login-posts{
+  margin: 0.5rem 0;
+  float: left;
+  margin-right: 12px;
+}
+
+
+.login-posts button {
+  padding: 0.5rem 2rem;
+  font: inherit;
+  cursor: pointer;
+  background-color: white;
+  color: #0d0480;
+  border: 1px solid #0d0480;
+}
+
+
+.login-posts button:hover,
+.login-posts button:active {
+  background-color: #0d0480;
   color: #ffffff;
   border: 1px solid #ffffff;
+  text-decoration: none;
+
 }
+
 
 
 
@@ -149,10 +176,11 @@ main {
   max-width: 90rem;
   margin: 0rem 0em 1rem auto;
   background-color: white;
-  padding: 1rem 5rem 1rem 1rem;
+  padding: 1rem 3rem 1rem 1rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-  font-size: 25px;
-  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+  font-size: 20px;
+  color: black;
+  line-height: 200%;
 }
 
 .tag {
@@ -164,10 +192,9 @@ main {
 
 
 #comment-form {
-  margin: 3rem auto;
+  margin: 1rem auto;
   width: 90%;
   max-width: 40rem;
-  border-radius: 12px;
   background-color: white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   padding: 1rem;
@@ -245,12 +272,11 @@ main {
 }
 
 #comments {
-  margin: 3rem auto;
+  margin: 0rem auto;
   width: 90%;
-  max-width: 60rem;
-  border-radius: 12px;
-  background-color: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  max-width: 40rem;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 2px 8px #000000;
   padding: 1rem 2rem;
 }
 
@@ -262,46 +288,42 @@ main {
 
 #comments li {
   margin-bottom: 1rem;
-  border-bottom: 2px solid #ccc;
+  border-bottom: 2px solid #020f81;
 }
 
 #comments li:last-of-type {
   border-bottom: none;
 }
 
-#comments h2 {
-  color: #464646;}
-
-.login-posts button {
-  margin-top: 10px;
-  padding: 15px 30px;
-  text-align: center;
-  transition: 0.5s;
-  background-size: 200% auto;
-  color: white;
-  border-radius: 5px;
-  display: block;
-  border: 0px;
-  font-weight: 450;
-  box-shadow: 0px 0px 14px -7px #3AA3C1;
-  background-image: linear-gradient(45deg, #260980 0%, #283996  51%, #3AA3C1  100%);
-  cursor: pointer;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+#comments span h2{
+  color: #000000;
+  font-size: 12px;
+  line-height: 200%;
+  float:left;
+  padding: 0%;
+  margin: 0 auto;
 }
 
-.login-posts button a{
-  text-decoration: none;
-  color: #e7e7e7;
-}
-.login-posts button:hover {
-  background-position: right center;
-  /* change the direction of the change here */
-  color: #fff;
-  text-decoration: none;
+#comments p {
+  color: #000000;
+  font-size: 12px;
+  line-height: 200%;
+  
 }
 
-.login-posts button:active {
-  transform: scale(0.95);
+#comments span p {
+  color: #000000;
+  font-size: 12px;
+  float: right;
+  padding: 0%;
+  margin: 0 auto;
 }
+
+#comments span{
+  display: inline-block;
+  width: 100%;
+  padding-top: 0rem;
+  margin: 0 auto;
+  height: fit-content;
+}
+
