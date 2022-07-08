@@ -1,18 +1,21 @@
+body  {
+  background-image: url("spurs_stadium.jpg");
+  background-size: cover;
+}
+
 .container {
   height: fit-content;
   width: fit-content;
   display: flex;
   flex-direction: column;
   border-radius: 30px;
-  box-shadow: 0 0 2em #24369e;
   gap: 2em;
-  padding: 1.5em;
-  background: #f1f7fe;
+  padding: 2em;
 }
 
 form {
   margin: 0 auto;
-  padding: 1rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   border-radius: 20px;
@@ -20,6 +23,7 @@ form {
   gap: 1em;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
 }
+
 
 button {
   cursor: pointer;
