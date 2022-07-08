@@ -4,31 +4,37 @@ body {
     background-size: cover;
 }
 
+.container{
+  margin: 0 auto;
+  padding:0rem 5rem 0rem 5rem;
+}
+
 .container h5{
-    margin-top: 5rem;
     padding-top: 5rem;
     align-items: center;
     align-self: center;
     text-align: center;
-}
-h5 {
+    margin: 0 auto;
     background-image: linear-gradient(transparent calc(65% - 5px), #000656 5px);
     background-size: 0;
     background-repeat: no-repeat;
     display: inline;
     transition: 0.5s ease;
-    font-size: 8.9vw;
+    font-size: 8.5vw;
     max-width: 75vw;
     color: #ffffff;
     font-family: "Red Hat Display", sans-serif;
     -webkit-text-stroke: 1px rgb(10, 4, 53);
-  }
+}
+
 
 h5:hover {
     background-size: 100%;
   }
   
-
-footer {
-display: none;
-}
+  footer {
+    bottom: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+  }

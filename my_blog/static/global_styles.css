@@ -80,11 +80,15 @@ body {
   text-decoration: none;
 }
 
+.footer-body{
+  min-height: 5vh;
+  display: flex;
+  flex-direction: column;
+}
+
 footer {
-  bottom: 0;
-  position: relative;
-  left: 0;
-  right: 0;
+  margin-top: auto;
+  flex-shrink: 0;
 }
 
 footer div.social-media-links {

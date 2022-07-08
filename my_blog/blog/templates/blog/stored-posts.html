@@ -13,10 +13,12 @@
 
 <section id="posts">
     <header>
-        <h2>Read Later Posts</h2>
+        <h1>Read Later Posts</h1>
     </header>
     {% if not has_posts %}
-    <p> No Post Saved</p>
+    <div class='no-posts'>
+    <p> No Posts Saved</p>
+    </div>
     {% else %}
     <section id="all-posts">
     <ul>

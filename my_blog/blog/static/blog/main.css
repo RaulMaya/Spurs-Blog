@@ -1,5 +1,6 @@
-body {
-  background-color: #e7e7e7;
+body  {
+  background-image: url("spurs.jpg");
+  background-size: cover;
 }
 
 #summary {
