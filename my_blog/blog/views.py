@@ -86,12 +86,14 @@ class DetailPostView(View):
     def post(self, request, slug):
         comment_form = CommentForm(request.POST)
         post = Post.objects.get(slug=slug)
+        print(post)
+        print(slug)
         if comment_form.is_valid():
             comment = comment_form.save(commit=False)
             comment.post = post
             comment.save()
 
-            return HttpResponseRedirect(reverse("individual_post", args=[slug]))
+            return HttpResponseRedirect(reverse("blog:individual_post", args=[slug]))
 
         post = Post.objects.get(slug=slug)
         context = {

@@ -26,15 +26,13 @@
     <div class="text-container">
     <h2>{{ post.title|title }}</h2>
     <hr>
-    </div>
+    
     <div>
         {% for tag in tags %}
         <button class ="tag">{{ tag.caption }}</button>
         {% endfor %}
     </div>
-    <div class = 'article'>
-        <img src="{{ post.image.url }}" alt="Post Title"/>
-    </div>
+</div>
     {% if user.is_authenticated %}
     
     <div class = "side-forms">
@@ -61,11 +59,13 @@
         </form>
         </div>
     
-    {% else %}
-    <div class="login-posts">
-        <button><a href="{% url 'users:login' %}">Log In <i class="fa fa-sign-in"></i></a></button>
-    </div>
-    {% endif %}
+        {% else %}
+        <div class="login-posts">
+            <a href="{% url 'users:login' %}">
+            <button class="btn"><i class="fa fa-sign-in"></i></button>
+            </a>
+        </div>
+        {% endif %}
         
 
         <div class="author">            
@@ -88,16 +88,17 @@
             <ul>
                 {% for comment in comments %}
                 <li>
-                    <h6>{{ comment.user_name }}</h6>
+                <span><h2>{{ comment.user_name }}</h2><p>{{ comment.date|date }}</p></span><hr>
                     <p>{{ comment.text|linebreaks }}</p>
-                    <p>{{ comment.date|date }}
+                    
                 </li>
                 {% endfor %}
             </ul>
-        </section>
+        
     {% else %}
-        <p>No comments in this post</p>
+
     {% endif %}
+        </section>
     
     <hr>
     <section id="comment-form" >
