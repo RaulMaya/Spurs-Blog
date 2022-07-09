@@ -4,6 +4,7 @@ from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
 from django.core.validators import MinLengthValidator
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -29,10 +30,12 @@ class Post(models.Model):
     excerpt = models.CharField(max_length=200)
     author =  models.ForeignKey(Author, on_delete=models.SET_NULL, null=True, related_name="post")
     image = models.ImageField(upload_to="images", null=True)
-    date = models.DateField(auto_now=True) # Automatically set whenever there is an update
+    date = models.DateField(auto_now_add=True) # Automatically set whenever there is an update
     slug = models.SlugField(unique=True, default="", db_index=True) # Unique True implies an index
     content = models.TextField(validators=[MinLengthValidator(10)])
     tag = models.ManyToManyField(Tag, null=False, related_name="posts")
+    favorites = models.ManyToManyField(User, default=None, blank=True, related_name="favorites")
+    readlater = models.ManyToManyField(User, default=None, blank=True, related_name="readlater")
 
     def get_absolute_url(self):
         return reverse("individual_post", args=[self.slug])
@@ -52,4 +55,5 @@ class Comment(models.Model):
     text =  models.TextField(max_length=400)
     date = models.DateField(auto_now=True)
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments")
+
 

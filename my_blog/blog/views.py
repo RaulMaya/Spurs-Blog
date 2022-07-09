@@ -1,5 +1,7 @@
 from datetime import date
+from gzip import READ
 from multiprocessing import context
+from this import d
 from django.db.models import Avg, Max, Min
 from .models  import Post
 from django.urls import reverse
@@ -9,6 +11,8 @@ from django.views.generic import ListView
 from django.views import View
 from .forms import CommentForm
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.models import User
+
 # Create your views here.
 
 class IndexView(ListView):
@@ -53,7 +57,8 @@ class DetailPostView(View):
     #model  = Post
 
     def is_stored_post(self, request, post_id):
-        stored_posts = request.session.get("stored_posts")
+        stored_posts = list(Post.objects.filter(readlater=request.user).values_list('pk', flat=True))
+        
         if stored_posts is not None:
             is_saved = post_id in stored_posts
         else:
@@ -62,7 +67,7 @@ class DetailPostView(View):
         return is_saved
 
     def favorites(self, request, post_id):
-        fav_post = request.session.get("favorites")
+        fav_post = list(Post.objects.filter(favorites=request.user).values_list('pk', flat=True))
         if fav_post is not None:
             is_fav = post_id in fav_post
         else:
@@ -122,69 +127,57 @@ class DetailPostView(View):
 class ReadLaterView(LoginRequiredMixin, View):
 
     def get(self, request):
-        stored_posts = request.session.get("stored_posts")
         context = {}
 
-        if stored_posts is None or len(stored_posts) == 0:
+        user_readlater = Post.objects.filter(readlater=request.user)
+
+        if user_readlater is None or len(user_readlater) == 0:
             context["posts"] = []
             context["has_posts"] = False
         else:
-            posts = Post.objects.filter(id__in=stored_posts)
-            context["posts"] = posts
+            context["posts"] = user_readlater
             context["has_posts"] = True
         
         return render(request, "blog/stored-posts.html", context)
 
     def post(self, request):
-        stored_posts = request.session.get("stored_posts")
-
-        if stored_posts is None:
-            stored_posts = []
-
-        post_id = int(request.POST["post_id"])
         
-        if post_id in stored_posts:
-            stored_posts.remove(post_id)
-            request.session["stored_posts"] = stored_posts
+        post_id = request.POST["post_id"]
+        readlater_post = Post.objects.get(id__in=post_id)
+
+        if readlater_post.readlater.filter(id=request.user.id).exists():
+            readlater_post.readlater.remove(request.user)
         else:
-            stored_posts.append(post_id)
-            request.session["stored_posts"] = stored_posts
+            readlater_post.readlater.add(request.user)
         
-
 
         return HttpResponseRedirect("/")
 
 
 class FavoritesView(LoginRequiredMixin, View):
     def get(self, request):
-        fav_posts = request.session.get("favorites")
         context = {}
 
-        if fav_posts is None or len(fav_posts) == 0:
+        user_favorites = Post.objects.filter(favorites=request.user)
+
+        if user_favorites is None or len(user_favorites) == 0:
             context["posts"] = []
             context["has_posts"] = False
         else:
-            posts = Post.objects.filter(id__in=fav_posts)
-            context["posts"] = posts
+            context["posts"] = user_favorites
             context["has_posts"] = True
         
         return render(request, "blog/favorites.html", context)
     
     def post(self, request):
-        fav_posts = request.session.get("favorites")
 
-        if fav_posts is None:
-            fav_posts = []
+        post_id = request.POST["post_id"]
+        favorite_post = Post.objects.get(id__in=post_id)
 
-        post_id = int(request.POST["post_id"])
-        
-        if post_id in fav_posts:
-            fav_posts.remove(post_id)
-            request.session["favorites"] = fav_posts
+        if favorite_post.favorites.filter(id=request.user.id).exists():
+            favorite_post.favorites.remove(request.user)
         else:
-            fav_posts.append(post_id)
-            request.session["favorites"] = fav_posts
+            favorite_post.favorites.add(request.user)
         
-
 
         return HttpResponseRedirect("/")
