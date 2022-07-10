@@ -81,14 +81,13 @@ body {
 }
 
 .footer-body{
-  min-height: 5vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
 }
 
 footer {
   margin-top: auto;
-  flex-shrink: 0;
 }
 
 footer div.social-media-links {

@@ -15,8 +15,12 @@ class RegisterView(View):
 
     def post(self, request):
         form = UserCreationForm(data=request.POST)
+
         if form.is_valid():
             new_user = form.save()
             print(new_user)
             login(request, new_user)
             return redirect("blog:starting_page")
+        
+        context = {'form':form}
+        return render(request, "registration/register.html", context)

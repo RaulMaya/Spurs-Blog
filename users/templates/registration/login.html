@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load bootstrap4 %} 
  
 {% block title %}
     Login
@@ -13,24 +14,15 @@
 
 {% block content %}
 
-<div class="container">
-    
-
-{% if form.errors %}
-    <p>Error</p>
-{% endif %}
-
-<form method='POST' action="{% url 'users:login' %}">
+<div class="jumbotron">
+    <h1>Log in to your account</h1>
+<form method='POST' action="{% url 'users:login' %}" class="form">
     <img src="{% static "LoginLogo.png" %}"  alt="{{ post.title }}"/>
     {% csrf_token %}
-    {% for field in form %}
-    <div class = "login-form {% if field.errors %}invalid{% endif %}">
-        {{ field.label_tag }}
-        {{ field }}
-        {{ field.errors }}
-    </div>
-    {% endfor %}
+    {% bootstrap_form form %} 
+    {% buttons %} 
     <button name="submit">Log In</button>
+    {% endbuttons %}   
     <div class="create-account">
     <p>Don't have an account?</p><a href="{% url 'users:register' %}">Create One</a>
     </div>
