@@ -15,19 +15,26 @@
     <header>
         <h1>Read Later Posts</h1>
     </header>
-    {% if not has_posts %}
-    <div class='no-posts'>
-    <p> No Posts Saved</p>
-    </div>
-    {% else %}
     <section id="all-posts">
+    {% if has_posts %}
     <ul>
+        <div class="container">
         {% for post in posts %}
             {% include "blog/includes/portrait.html" %}
         {% endfor %}
+        </div>
      </ul>
+     {% else %}
+     <ul>
+        <div class="container">
+            <div class="no-posts-card">
+            <p>No Posts Saved</p>
+            </div>
+        </div>
+     </ul>
+     {% endif %}
     </section>
-    {% endif %}
+    
  </section>
 
 {% endblock %}
