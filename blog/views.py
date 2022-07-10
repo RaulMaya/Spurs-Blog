@@ -57,23 +57,31 @@ class DetailPostView(View):
     #model  = Post
 
     def is_stored_post(self, request, post_id):
-        stored_posts = list(Post.objects.filter(readlater=request.user).values_list('pk', flat=True))
-        
-        if stored_posts is not None:
-            is_saved = post_id in stored_posts
-        else:
-            is_saved = False
+        if request.user.is_authenticated: 
+            stored_posts = list(Post.objects.filter(readlater=request.user).values_list('pk', flat=True))
 
-        return is_saved
+            if stored_posts is not None:
+                is_saved = post_id in stored_posts
+            else:
+                is_saved = False
+
+            return is_saved
+        
+        else:
+            pass
 
     def favorites(self, request, post_id):
-        fav_post = list(Post.objects.filter(favorites=request.user).values_list('pk', flat=True))
-        if fav_post is not None:
-            is_fav = post_id in fav_post
-        else:
-            is_fav = False
+        if request.user.is_authenticated: 
+            fav_post = list(Post.objects.filter(favorites=request.user).values_list('pk', flat=True))
+            if fav_post is not None:
+                is_fav = post_id in fav_post
+            else:
+                is_fav = False
 
-        return is_fav
+            return is_fav
+
+        else:
+            pass
 
     def get(self, request, slug):
         post = Post.objects.get(slug=slug)
