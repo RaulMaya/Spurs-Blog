@@ -12,6 +12,15 @@
 
 {% block content %}
     <section id="start">
+        {% if user.is_authenticated %}
+        <div class="container-fluid">
+            <div class="welcome">
+              Hello, {{ user.username }}
+            </div>
+        </div>
+        {% else %}
+        {% endif %}
+
         <header>
             <a class='active' href="{% url 'blog:starting_page' %}"><h1><span>Tottenham Blog</span></h1></a>
         </header>

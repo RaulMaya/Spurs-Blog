@@ -14,15 +14,19 @@
 {% block content %}
 
 {% if comment_form.errors %}
-<div id="alert">
-    <h2>Unsuccessful Comment</h2>
-    <h3>There is an error with your comment</h3>
-    <p>Please check the comment form below</p>
-    <a href="#comment-form">See problem</a>
-</div>
+<br>
+<section class="message error">
+    <header></header>
+    <i></i>
+    <h2>
+      <span>Error!</span> 
+      Unsuccessful Comment! 
+    </h2>
+  </section> 
 {% endif %}
 
-    <section id='summary'>
+
+<section id='summary'>
     <div class="text-container">
     <h2>{{ post.title|title }}</h2>
     <hr>
