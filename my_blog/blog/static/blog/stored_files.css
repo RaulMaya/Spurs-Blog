@@ -3,6 +3,7 @@ body  {
   background-image: url("sonny.jpg");
   background-size: cover;
 }
+
   #posts {
     padding: 0.01rem 12%;
   }
@@ -12,11 +13,9 @@ body  {
     align-items: flex-start;
     margin: 2rem auto;
     width: fit-content;
-    height: 5rem;
+    height: 32rem;
     font-family: "Red Hat Display", sans-serif;
-
   }
-
 
   #posts h1 {
     margin: 0 auto;
@@ -32,37 +31,26 @@ body  {
     -webkit-text-stroke: 1px rgb(10, 4, 53);
   }
   
-  .no-posts{
-    position: relative;
-    margin: 12rem auto 20.1rem auto;
-    width: fit-content;
-    height: 1rem;
-    font-family: "Red Hat Display", sans-serif;
-  }
-  #posts p{
-    color: #000000;
-    margin: auto auto;
-    font-size: 25px;
-  }
 
   #all-posts {
-    padding: 5rem;
+    background-color: transparent;
     border-radius: 12px;
     width: fit-content;
-    margin: 0rem auto 2rem auto;
+    margin: -28rem auto 2rem auto;
     height: fit-content;
   }
   
-#all-posts h2 {
-text-align: center;
+
+#all-posts .card-body h4 {
+  margin: 10px auto;
+  text-align: center;
+  text-decoration:none;
+  text-align: center;
+  font-size: 20px;
+  color: #000000;
 }
 
-#all-posts h4 {
-    padding: 10px;
-    text-align: center;
-    font-size: 20px;
-    color: #000000;
-    }
+
 
 #all-posts ul {
 list-style: none;
@@ -70,10 +58,12 @@ margin: 0;
 padding: 0;
 display: flex;
 gap: 1rem;
+text-decoration:none;
 }
 
 #all-posts li {
 flex: 1;
+text-decoration:none;
 }
 
 
@@ -82,18 +72,31 @@ flex: 1;
   justify-content: space-evenly;
   grid-template-columns: auto auto auto;
   padding: 10px;
+  text-decoration:none;
 }
 
 #all-posts .card {
-  margin: 10px;
+  margin: 15px;
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
-  box-shadow: 0 2px 20px rgba(23, 11, 104, 0.958);
+  box-shadow: 0 1px 15px rgba(22, 33, 122, 0.958);
   overflow: hidden;
-  justify-content: center;
   width: 300px;
-  height: 500px;
+  height: 450px;
+  text-decoration:none;
 }
+
+#all-posts .card:hover {
+  margin: 15px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 0 7px 20px rgba(182, 245, 255, 0.958);
+  overflow: hidden;
+  width: 300px;
+  height: 450px;
+  text-decoration: none;
+}
+
 
 #all-posts .card-header img {
   width: 100%;
@@ -103,26 +106,17 @@ flex: 1;
 #all-posts .card-body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: flex-start;
   padding-left: 15px;
-  padding-bottom: 40px;
-}
-
-#all-posts .tag {
-  background: #004ac1;
-  border-radius: 50px;
-  font-size: 12px;
-  margin: 0;
-  color: #fff;
-  padding: 2px 10px;
-  text-transform: uppercase;
-  cursor: pointer;
+  padding-top: 10px;
+  text-decoration:none;
 }
 
 .user {
   display: flex;
-  margin-top: auto;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
 }
 
 .user img {
@@ -156,3 +150,18 @@ flex: 1;
 }
 
 
+#all-posts .no-posts-card {
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 300px;
+  height: 450px;
+  text-decoration:none;
+}
+
+.no-posts-card p{
+  margin: 200px auto;
+  text-align: center;
+  text-decoration:none;
+  font-size: 25px;
+  color: #000000;}
