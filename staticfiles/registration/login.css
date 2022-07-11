@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css?family=Red+Hat+Display:900&display=swap");
+body  {
+  background-image: url("spurs_stadium.jpg");
+  background-size: cover;
+}
+
+.jumbotron{
+  margin: 0 auto;
+  background-color: transparent;
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  border-radius: 30px;
+  gap: 2em;
+  padding: 2em;
+}
+
+.jumbotron h1 {
+  margin: 0 auto;
+  background-image: linear-gradient(transparent calc(65% - 5px), #000656 5px);
+  background-size: 0;
+  background-repeat: no-repeat;
+  display: inline;
+  transition: 0.5s ease;
+  font-size: 5vw;
+  max-width: 75vw;
+  color: #ffffff;
+  font-family: "Red Hat Display", sans-serif;
+  -webkit-text-stroke: 1px rgb(10, 4, 53);
+}
+
+
+form {
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  background-color: white;
+  gap: 1em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+}
+
+button {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  width: fit-content;
+  border-radius: 6px;
+  background-color: #00005c;
+  color: white;
+  border: 1px solid #5d96ff;
+}
+
+button:hover,
+button:active {
+  background-color: #020674;
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+
+.login-form input {
+  font: inherit;
+  padding: 0.25rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  display: block;
+  width: 10rem;
+}
+
+.login-form input:focus {
+  border-color: #0e0eb8;
+  outline: none;
+  background-color: #95b3ff;
+}
+
+
+.login-form label {
+  font-weight: lighter;
+  color: #5e5e5e;
+  display: block;
+}
+
+form .create-account {
+  display: flex;
+  font-size: 0.7em;
+  color: #5e5e5e;
+  gap: 0.5rem;
+}
+form .create-account a{
+  cursor: pointer;
+}
+
+
+
+.jumbotron img {
+  border-radius: 50%;
+  width: 10p6x;
+  height: 100px;
+  margin: 0 auto;
+}
+
+button.close:hover {
+  background-color: transparent;
+  border: 0;
+}
+
+button.close {
+  
+  background-color: transparent;
+  border: 0;
+}
+
+.close {
+  float: right;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  opacity: .5;
+}
+
+.alert-dismissible .close {
+  padding: 0rem 0.25rem 0rem 0rem;
+  background-color: transparent;
+  border: 0;
+}

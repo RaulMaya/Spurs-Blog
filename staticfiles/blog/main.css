@@ -1,0 +1,387 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+@import url("https://use.fontawesome.com/releases/v5.8.1/css/all.css");
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+body  {
+  background-image: url("spurs.jpg");
+  background-size: cover;
+}
+
+#summary {
+  margin: 0rem 0rem 1rem auto;
+  padding: 1rem 1rem 1rem 1rem;
+  width: 90%;
+  max-width: 90rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  height: fit-content;
+}
+
+.text-container{
+  width: fit-content;
+  height: fit-content;
+}
+
+.side-forms{
+  display: inline-block;
+  width: 100%;
+  padding-top: 1rem;
+}
+
+
+
+#summary h2 {
+  color: rgb(0, 0, 0);
+  font-size: 3.5em;
+  margin-bottom: 1rem;
+}
+
+
+#summary .article {
+  position: absolute;
+  top: 1rem;
+  right: 0.5rem;
+  padding: 0rem 0rem;
+  border-radius: 12px;
+  text-align: right;
+  height: fit-content;
+}
+
+#summary .article img {
+  width:27rem;
+  height: 19rem;
+  transform: rotateZ(0deg);
+  margin-bottom: 1rem;
+} 
+
+#summary address {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+#summary .author{
+  text-align: right;
+  font-size: 12px;
+  color:#464646;
+  margin: 0rem 0;
+}
+
+#summary time {
+  font-weight: bold;
+}
+
+.read-later {
+  margin: 0rem 0;
+  float: left;
+  margin-right: 12px;
+}
+
+.read-later button {
+  background-color: transparent;
+  border: 1px solid #FF5B00;
+  padding: 0.5rem 2rem;
+  font: inherit;
+  color: #FF5B00;
+  cursor: pointer;
+}
+
+.read-later button:hover,
+.read-later button:active {
+  background-color: #FF5B00;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
+
+.favorite {
+  margin: 0rem 0;
+  float: left;
+  margin-right: 12px;
+}
+
+.favorite button {
+  background-color: transparent;
+  border: 1px solid #FAC213;
+  padding: 0.5rem 2rem;
+  font: inherit;
+  color: #FAC213;
+  cursor: pointer;
+}
+
+.favorite button:hover,
+.favorite button:active {
+  background-color: #FAC213;
+  color: #ffffff;
+  border: 1px solid #FAC213;
+}
+
+.on-read-list button {
+  padding: 0.5rem 2rem;
+  font: inherit;
+  cursor: pointer;
+  background-color: #FF5B00;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
+
+.on-read-list button:hover,
+.on-read-list button:active {
+  background-color: #ffffff;
+  color: #FF5B00;
+  border: 1px solid #FF5B00;
+}
+
+
+.on-fav-list button {
+  padding: 0.5rem 2rem;
+  font: inherit;
+  cursor: pointer;
+  background-color: #FAC213;
+  color: #ffffff;
+  border: 1px solid #FAC213;
+}
+
+.on-fav-list button:hover,
+.on-fav-list button:active {
+  background-color: #ffffff;
+  color: #FAC213;
+  border: 1px solid #FAC213;
+}
+
+
+.login-posts{
+  margin: 0.5rem 0;
+  float: left;
+  margin-right: 12px;
+}
+
+
+.login-posts button {
+  padding: 0.5rem 2rem;
+  font: inherit;
+  cursor: pointer;
+  background-color: white;
+  color: #0d0480;
+  border: 1px solid #0d0480;
+}
+
+
+.login-posts button:hover,
+.login-posts button:active {
+  background-color: #0d0480;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  text-decoration: none;
+
+}
+
+
+
+
+main {
+  width: 90%;
+  max-width: 90rem;
+  margin: 0rem 0em 1rem auto;
+  background-color: white;
+  padding: 1rem 3rem 1rem 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  font-size: 20px;
+  color: black;
+  line-height: 200%;
+}
+
+.tag {
+  background-color: white;
+  color: #002385;
+  padding: 0.5rem 1rem;
+  border-radius: 8px #002385 solid;
+}
+
+
+#comment-form {
+  margin: 1rem auto;
+  width: 90%;
+  max-width: 40rem;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  padding: 1rem;
+}
+
+#comment-form button {
+  font: inherit;
+  background-color: #0b0281;
+  color: white;
+  border: 1px solid #020f81;
+  padding: 0.5rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#comment-form button:hover,
+#comment-form button:active {
+  background-color: #0b10a7;
+  border-color: #0b13a7;
+}
+
+.control-form {
+  margin-bottom: 1rem;
+}
+
+.control-form label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.control-form input,
+.control-form textarea {
+  display: block;
+  width: 100%;
+  font: inherit;
+  padding: 0.25rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.errorlist{
+  list-style: none;
+  margin: 0.5 rem 0;
+  padding: 0;
+  color: #c00606
+}
+
+.invalid label{
+  color: #c00606
+}
+
+.invalid input,
+.invalid textarea{
+  border-color: #c00606;
+  background-color: #ffdbdb;
+}
+
+.message {
+  background: #eee;
+  box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.31);
+  border-radius: 1em;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 40em;
+  margin: 2em auto;
+}
+
+.message header {
+  background: #9E9E9E;
+  width: 100%;
+  padding: 0.5em;
+}
+
+.message i:after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "";
+  font-style: normal;
+  color: #eee;
+  background: #353535;
+  padding: 1em 0.75em;
+  font-size: 1.25em;
+  display: block;
+  width: 2.5em;
+  height: 100%;
+  text-align: center;
+}
+.message h2 {
+  margin: 0.75em;
+  font-size: 1.25em;
+  position: relative;
+  display: block;
+  width: calc(100% - 2.5em - 1.5em);
+}
+.message h2 span {
+  color: #9E9E9E;
+}
+.message h2:after {
+  content: "";
+  border-bottom: 0.1em solid #9E9E9E;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.error header {
+  background: #D50000;
+}
+.error i:after {
+  background: #3d1d1d;
+  color: #ff5656;
+  content: "";
+}
+.error h2 span {
+  color: #D50000;
+}
+.error h2:after {
+  border-bottom: 0.1em solid #D50000;
+}
+
+#comments {
+  margin: 0rem auto;
+  width: 90%;
+  max-width: 40rem;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 2px 8px #000000;
+  padding: 1rem 2rem;
+}
+
+#comments ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#comments li {
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #020f81;
+}
+
+#comments li:last-of-type {
+  border-bottom: none;
+}
+
+#comments span h2{
+  color: #000000;
+  font-size: 12px;
+  line-height: 200%;
+  float:left;
+  padding: 0%;
+  margin: 0 auto;
+}
+
+#comments p {
+  color: #000000;
+  font-size: 12px;
+  line-height: 200%;
+  
+}
+
+#comments span p {
+  color: #000000;
+  font-size: 12px;
+  float: right;
+  padding: 0%;
+  margin: 0 auto;
+}
+
+#comments span{
+  display: inline-block;
+  width: 100%;
+  padding-top: 0rem;
+  margin: 0 auto;
+  height: fit-content;
+}
+

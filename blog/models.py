@@ -1,5 +1,3 @@
-from email.mime import image
-from tkinter.tix import Tree
 from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
