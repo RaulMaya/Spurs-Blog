@@ -38,7 +38,7 @@
     </div>
 </div>
     {% if user.is_authenticated %}
-    
+
     <div class = "side-forms">
         <div class="read-later {% if saved_for_later %}on-read-list{% endif %}">
             <form action="{% url 'blog:read-later' %}" method="POST">
@@ -78,7 +78,7 @@
                 Last Update: <time>{{ post.date|date:"d M Y" }}</time>
             </div>
         </div>
-    </div>
+  
     </section>
     <hr>
 

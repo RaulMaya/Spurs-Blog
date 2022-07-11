@@ -143,6 +143,14 @@ AWS_S3_REGION_NAME = region
 AWS_ACCESS_KEY_ID = key_id
 AWS_SECRET_ACCESS_KEY = secret_key
 
+AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
+
+STATICFILES_FOLDER = "static"
+MEDIAFILES_FOLDER = "media"
+
+STATICFILES_STORAGE = "custom_storages.StaticFileStorage"
+DEFAULT_FILE_STORAGE = "custom_storages.MediaFileStorage"
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 

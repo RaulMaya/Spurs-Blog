@@ -33,7 +33,7 @@ body {
   transition: all ease 450ms;
 }
 .sidebar-navigation ul li .tooltip {
-  display: inline;
+  display: inline-block;
   position: absolute;
   background-color: #ffffff;
   padding: 8px 15px;
@@ -42,10 +42,11 @@ body {
   left: 90px;
   opacity: 0;
   visibility: hidden;
-  font-size: 13px;
+  font-size: 14px;
   letter-spacing: 0.5px;
   color: #001E6C;
   width: fit-content;
+  white-space: nowrap;
 }
 .sidebar-navigation ul li .tooltip:before {
   content: "";

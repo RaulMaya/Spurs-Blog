@@ -153,9 +153,10 @@ body  {
 
 
 .login-posts{
-  margin: 0.5rem 0;
+  margin: 1rem 0rem 0rem 0rem;
   float: left;
   margin-right: 12px;
+  background-color: #002385;
 }
 
 
@@ -180,11 +181,10 @@ body  {
 
 
 
-
 main {
   width: 90%;
   max-width: 90rem;
-  margin: 0rem 0em 1rem auto;
+  margin: 0rem 0em 2rem auto;
   background-color: white;
   padding: 1rem 3rem 1rem 1rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
