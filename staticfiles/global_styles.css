@@ -10,7 +10,7 @@ body {
 }
 
 .sidebar-navigation {
-  display: inline-block;
+  position: fixed;
   min-height:fit-content;
   width: 80px;
   background-color: #001E6C;
@@ -33,7 +33,7 @@ body {
   transition: all ease 450ms;
 }
 .sidebar-navigation ul li .tooltip {
-  display: inline-block;
+  display: inline;
   position: absolute;
   background-color: #ffffff;
   padding: 8px 15px;
@@ -45,6 +45,7 @@ body {
   font-size: 13px;
   letter-spacing: 0.5px;
   color: #001E6C;
+  width: fit-content;
 }
 .sidebar-navigation ul li .tooltip:before {
   content: "";
@@ -81,17 +82,20 @@ body {
 }
 
 .footer-body{
-  min-height: 10vh;
   display: flex;
+  min-height: 100vh;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 footer {
   margin-top: auto;
+  background: #001E6C;
+  margin:0rem 0rem 0rem 0rem;
 }
 
 footer div.social-media-links {
-  background: #001E6C;
+  
   overflow: hidden;
   padding-bottom: 4px;
   text-align: center;

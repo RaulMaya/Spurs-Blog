@@ -50,12 +50,12 @@ button {
   border-radius: 6px;
   background-color: #00005c;
   color: white;
-  border: 1px solid #5d96ff;
+  border: 1px solid #00005c;
 }
 
 button:hover,
 button:active {
-  background-color: #5d96ff;
+  background-color: #1F4690;
   border-color: #00005c;
   color: #ffffff;
 }

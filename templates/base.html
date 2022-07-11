@@ -17,10 +17,11 @@
     {% endblock %}
 </head>
 <body>
-    <nav class="sidebar-navigation">
+    <div class="footer-body">
+      <nav class="sidebar-navigation">
         <ul>
             <li>
-                <a class='active' href="{% url 'blog:starting_page' %}"><img src="{% static "Spurs Blog Logo.png" %}" alt="" width="38" he8ight="38"></a>
+                <a class='active' href="{% url 'blog:starting_page' %}"><img src="{% static "Spurs Blog Logo.png" %}" alt="" width="38" height="38"></a>
                 <span class="tooltip">Home</span>
             </li>
             <li>
@@ -53,48 +54,48 @@
             {% endif %}
         </ul>
     </nav>
-    
-    {% block content %}{% endblock %}
+    {% block content %}
+    {% endblock %}
+    <footer>
+      <div class="social-media-links">
+        <ul>
+          <li>
+            <a href="https://twitter.com/RaulMaya11">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/raul-maya/">
+              <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/raul.mayas/">
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+            </li>
+          <li>
+            <a href="https://github.com/RaulMaya">
+              <i class="fa fa-github" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/raul.maya.507/">
+              <i class="fa fa-facebook-official" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:raulmayas20@gmail.com">
+              <i class="fa fa-envelope-o" aria-hidden="true"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </div>
 
 </body>
-<div class="footer-body">
-<footer>
-  <div class="social-media-links">
-    <ul>
-      <li>
-        <a href="https://twitter.com/RaulMaya11">
-          <i class="fa fa-twitter" aria-hidden="true"></i>
-        </a>
-      </li>
-      <li>
-        <a href="https://www.linkedin.com/in/raul-maya/">
-          <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-        </a>
-      </li>
-      <li>
-        <a href="https://www.instagram.com/raul.mayas/">
-          <i class="fa fa-instagram" aria-hidden="true"></i>
-        </a>
-        </li>
-      <li>
-        <a href="https://github.com/RaulMaya">
-          <i class="fa fa-github" aria-hidden="true"></i>
-        </a>
-      </li>
-      <li>
-        <a href="https://www.facebook.com/raul.maya.507/">
-          <i class="fa fa-facebook-official" aria-hidden="true"></i>
-        </a>
-      </li>
-      <li>
-        <a href="mailto:raulmayas20@gmail.com">
-          <i class="fa fa-envelope-o" aria-hidden="true"></i>
-        </a>
-      </li>
-    </ul>
-  </div>
-</footer>
-</div>
+
 <script>
     $("ul li").on("click", function () {
         $("li").removeClass("active");

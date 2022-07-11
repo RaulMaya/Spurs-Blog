@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 from os import getenv
-from .config import host, name, password, port, user, secretkey_rm
+from .config import host, name, password, port, user, secretkey_rm, bucket, region, secret_key, key_id
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'blog',
     'users',
     'bootstrap4',
+    'storages',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -136,6 +137,11 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = BASE_DIR / "uploads"
 MEDIA_URL = "/media/"
+
+AWS_STORAGE_BUCKET_NAME = bucket
+AWS_S3_REGION_NAME = region
+AWS_ACCESS_KEY_ID = key_id
+AWS_SECRET_ACCESS_KEY = secret_key
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

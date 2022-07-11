@@ -29,7 +29,7 @@ class Post(models.Model):
     author =  models.ForeignKey(Author, on_delete=models.SET_NULL, null=True, related_name="post")
     image = models.ImageField(upload_to="images", null=True)
     date = models.DateField(auto_now_add=True) # Automatically set whenever there is an update
-    slug = models.SlugField(unique=True, default="", db_index=True) # Unique True implies an index
+    slug = models.SlugField(max_length=100, unique=True, default="", db_index=True) # Unique True implies an index
     content = models.TextField(validators=[MinLengthValidator(10)])
     tag = models.ManyToManyField(Tag, null=False, related_name="posts")
     favorites = models.ManyToManyField(User, default=None, blank=True, related_name="favorites")
