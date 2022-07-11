@@ -1,0 +1,103 @@
+#latest-posts {
+    background-color: transparent;
+    border-radius: 12px;
+    width: fit-content;
+    margin: -28rem auto 2rem auto;
+    height: fit-content;
+  }
+  
+#latest-posts h2 {
+text-align: center;
+}
+
+#latest-posts .card-body h4 {
+  margin: 10px auto;
+  text-align: center;
+  text-decoration:none;
+  text-align: center;
+  font-size: 20px;
+  color: #000000;
+}
+
+
+
+#latest-posts ul {
+list-style: none;
+margin: 0;
+padding: 0;
+display: flex;
+gap: 1rem;
+text-decoration:none;
+}
+
+#latest-posts li {
+flex: 1;
+text-decoration:none;
+}
+
+
+#latest-posts .container {
+  display: grid;
+  justify-content: space-evenly;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+  text-decoration:none;
+}
+
+#latest-posts .card {
+  margin: 15px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 0 1px 15px rgba(22, 33, 122, 0.958);
+  overflow: hidden;
+  width: 300px;
+  height: 450px;
+  text-decoration:none;
+}
+
+#latest-posts .card:hover {
+  margin: 15px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 0 7px 20px rgba(182, 245, 255, 0.958);
+  overflow: hidden;
+  width: 300px;
+  height: 450px;
+  text-decoration: none;
+}
+
+
+#latest-posts .card-header img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+#latest-posts .card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 15px;
+  padding-top: 10px;
+  text-decoration:none;
+}
+
+.user {
+  display: flex;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+}
+
+.user img {
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
+.user-info h5 {
+  margin: 0;
+  font-size: 10px;
+}
+.user-info small {
+  color: #545d7a;
+}

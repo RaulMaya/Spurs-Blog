@@ -1,17 +1,11 @@
-from datetime import date
-from gzip import READ
-from multiprocessing import context
-from this import d
-from django.db.models import Avg, Max, Min
 from .models  import Post
 from django.urls import reverse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.views.generic import ListView
 from django.views import View
 from .forms import CommentForm
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.models import User
 
 # Create your views here.
 
