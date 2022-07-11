@@ -13,19 +13,28 @@ This project is a Django Blog App about my favorite soccer team which is Tottenh
     <br/>
     <a href="https://github.com/RaulMaya/Mars-Mission-Scraping/blob/master/mission_to_mars.ipynb">Repository</a>
     ·
-    <a href="http://tottenhamblog-env-1.eba-4xb2gdij.us-east-1.elasticbeanstalk.com/ ">Web App Deployment</a>
+    <a href="http://tottenhamblog-env-1.eba-4xb2gdij.us-east-1.elasticbeanstalk.com/ ">AWS Deployment</a>
     ·
-    <a href="">App</a>
+    <a href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-65737e98-ce95-4c12-bcb0-e86c5d1623fd.pdf">Course Project Certification</a>
   </p>
 </div>
 
 <!-- ABOUT THE PROJECT -->
-### Scraped Web Sites
+### Project Django Topics
 
-1. <a href="https://redplanetscience.com">Red Planet Science</a>
-2. <a href="https://spaceimages-mars.com">Mars Space Images</a>
-3. <a href="https://galaxyfacts-mars.com">Galaxy Facts</a>
-4. <a href="https://marshemispheres.com">Mars Hemispheres</a>
+1. Understanding URLs, views, requests and responses
+2. Working with templates and static files like CSS and images
+3. Working with data and models
+4. Connecting data with relationships (one-to-many, one-to-one, many-to-many)
+5. Querying data with Django's powerful model solution
+6. Adding administration panels to your projects
+7. Handling user input with forms - manually and with Django's built-in form support
+8. Advanced features like class-based views (and when to use them)
+9. Dealing with file uploads and how to serve uploaded files
+10. Working with sessions
+11. User authentication
+12. In-depth deployment instructions and examples
+13. Different ways of deploying and serving static files and user uploads
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -34,7 +43,7 @@ This project is a Django Blog App about my favorite soccer team which is Tottenh
 
 ![mars.jpg](images/mars.jpg)
 
-The project consists of developing a Web Page that is powered with a program that extracts data from different websites related to the planet Mars. All the extracted information will be stored in a <a href="https://www.mongodb.com/">Mongo</a> database. So when the information is in the database, the program will call the new scraped data and replace the old data from our main web page with the new information from our <a href="https://www.mongodb.com/">Mongo</a> database.
+This projects consists on a soccer team (Tottenham Hotspurs) blog, in which the user will have the ability and freedom to register or not to the blog.
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
