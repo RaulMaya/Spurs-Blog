@@ -1,17 +1,17 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/RaulMaya/Mars-Mission-Scraping">
+  <a href="https://github.com/RaulMaya/Spurs-Blog">
     <img src="static/LoginLogo.png" alt="Logo" width="280" height="150">
   </a>
 
   <h2 align="center">Tottenham Hotspurs: Django Blog</h2>
 
 <p align="center">
-This project is a Django Blog App about my favorite soccer team which is Tottenham Hotspurs. The objective of this project was to develop and challenge my Django skills, in an interactive and entertained way. In this application, you can read my opinions about Tottenham Hotspurs news, and also you can create your account and save your favorite posts or your read later posts.
+This project is a Django Blog App about my favorite soccer team Tottenham Hotspurs. The objective of this project was to develop and challenge my Django skills, in an interactive and entertained way. In this application, you can read my opinions about Tottenham Hotspurs news, and also you can create your account and save your favorite posts or your read later posts.
     <br/>
     <br/>
-    <a href="https://github.com/RaulMaya/Mars-Mission-Scraping/blob/master/mission_to_mars.ipynb">Repository</a>
+    <a href="https://github.com/RaulMaya/Spurs-Blog">Repository</a>
     ·
     <a href="http://tottenhamblog-env-1.eba-4xb2gdij.us-east-1.elasticbeanstalk.com/ ">AWS Deployment</a>
     ·
@@ -20,7 +20,7 @@ This project is a Django Blog App about my favorite soccer team which is Tottenh
 </div>
 
 <!-- ABOUT THE PROJECT -->
-### Project Django Topics
+### Project Covered Django Topics
 
 1. Understanding URLs, views, requests and responses
 2. Working with templates and static files like CSS and images
@@ -41,23 +41,30 @@ This project is a Django Blog App about my favorite soccer team which is Tottenh
 
 ### About The Project
 
-![mars.jpg](images/mars.jpg)
+![index.jpg](static/index.png)
 
-This projects consists on a soccer team (Tottenham Hotspurs) blog, in which the user will have the ability and freedom to register or not to the blog.
+This projects is about a soccer team (Tottenham Hotspurs) blog. This blog runs using Django as framework and Python as programming language, also it covers very important and interesting Django topics. The blog is deployed using AWS: elastic-beanstalk, buckets and PostgreSQL DB.
+
+The index provides you with the latest 3 published posts, you can access on detail to any of those posts by clicking on any of them.
+
+Also you have the navigation menu, and if you are not logged in you will have the option to explore all the published posts, log in or register.
+
+In case the guest doesn't have an account, the guest can go to the register button in the menu navigator, and fill the form to create the user account. The registration process is based on a Django authentication model, and it is very easy to fill, you just need to satisfy certain requirements on the password.
+
+![register.jpg](static/register.png)
+
+If you already have an existing account, you are good to go to login by using your account and your selected password.
+
+![login.jpg](static/login.png)
+
+In the other hand if you are logged in you will be able to store your posts into a read later or favorites label. This helps the users to follow the track of posts they want to read or their favorite ones.
+
+Also, at the bottom of every post there is a comment form, in which anyone that visits the page can comment and share their opinions, critics and ideas about the specific post.
+
+![comments.jpg](static/comments.png)
 
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-### Project Dependencies
-
-1. Flask
-2. BeautifulSoup
-3. Splinter
-4. Web Driver Manager
-5. Pymongo
-6. Flask-PyMongo
-
+<p align="right">(<a href="#top">back to top</a>)</p
 
 
 ### Contact :iphone:
